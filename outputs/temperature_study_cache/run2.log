@@ -1,0 +1,23 @@
+Resuming: 1521 valid draws cached, ledger cost $5.7529
+progress temp=0.0 valid=300/300 total_cost=$5.7529
+[temp 0.1] pass 0: have 293/300, attempting 7
+progress temp=0.1 valid=300/300 total_cost=$5.7759
+[temp 0.2] pass 0: have 266/300, attempting 34
+progress temp=0.2 valid=300/300 total_cost=$5.8875
+[temp 0.3] pass 0: have 240/300, attempting 60
+progress temp=0.3 valid=300/300 total_cost=$6.0856
+[temp 0.4] pass 0: have 232/300, attempting 68
+progress temp=0.4 valid=300/300 total_cost=$6.3125
+[temp 0.5] pass 0: have 190/300, attempting 110
+progress temp=0.5 valid=300/300 total_cost=$6.6830
+[temp 0.6] pass 0: have 0/300, attempting 300
+progress temp=0.6 valid=300/300 total_cost=$7.7026
+[temp 0.7] pass 0: have 0/300, attempting 300
+progress temp=0.7 valid=300/300 total_cost=$8.7358
+[temp 0.8] pass 0: have 0/300, attempting 300
+progress temp=0.8 valid=300/300 total_cost=$9.7782
+[temp 0.9] pass 0: have 0/300, attempting 300
+progress temp=0.9 valid=300/300 total_cost=$10.8275
+[temp 1.0] pass 0: have 0/300, attempting 300
+progress temp=1.0 valid=300/300 total_cost=$11.8841
+DONE all temps. total_cost=$11.8841

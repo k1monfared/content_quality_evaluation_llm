@@ -1,0 +1,11 @@
+rater,kind,mean_overall
+gpt-5.2,judge,6.594
+claude-haiku-4.5,judge,5.446
+gemini-2.5-flash,judge,7.69
+perplexity-sonar,judge,7.054
+human_1,human,5.76
+human_2,human,5.74
+two_human_average,human_ref,5.75
+random_human,human_ref,5.75
+min_of_two_humans,human_ref,5.308
+max_of_two_humans,human_ref,6.192

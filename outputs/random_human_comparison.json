@@ -1,0 +1,7 @@
+{
+  "n_resamples": 1000,
+  "n_items": 500,
+  "mean_abs_diff_vs_simple_average": 0.0077,
+  "max_abs_diff_vs_simple_average": 0.0641,
+  "corr_with_simple_average": 0.999922
+}

@@ -1,0 +1,12 @@
+Resuming: 0 draws already cached, ledger cost $0.0000
+[temp 0.0] running 300 draws
+progress temp=0.0 cached=300/300 total_cost=$0.9759
+[temp 0.1] running 300 draws
+progress temp=0.1 cached=293/300 total_cost=$1.9620
+[temp 0.2] running 300 draws
+progress temp=0.2 cached=266/300 total_cost=$2.9505
+[temp 0.3] running 300 draws
+progress temp=0.3 cached=240/300 total_cost=$3.9422
+[temp 0.4] running 300 draws
+progress temp=0.4 cached=232/300 total_cost=$4.9432
+[temp 0.5] running 300 draws

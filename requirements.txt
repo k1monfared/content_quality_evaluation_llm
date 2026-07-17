@@ -1,0 +1,14 @@
+# Core scientific stack
+numpy>=2.1
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.5
+matplotlib>=3.8
+
+# Model API access (Poe exposes an OpenAI-compatible endpoint)
+openai>=1.40
+
+# Config and environment
+python-dotenv>=1.0
+PyYAML>=6.0
+requests>=2.31

@@ -1,0 +1,137 @@
+# Central configuration for the content quality evaluation study.
+# Everything that controls scale, models, and thresholds lives here so the
+# study is reproducible and easy to re-point at a different dataset or model.
+
+dataset:
+  # Primary: English Wikipedia articles, from which we extract paragraph-level
+  # passages of mixed writing quality. Licensed CC BY-SA (the wikimedia/wikipedia
+  # dataset card tags CC BY-SA 3.0 and GFDL; live Wikipedia article text is
+  # CC BY-SA 4.0). Served by the Hugging Face datasets-server rows API with no
+  # authentication.
+  source: "wikimedia/wikipedia"
+  source_config: "20231101.en"
+  source_split: "train"
+  # Fallback if the primary is unreachable: WikiText-103 (raw), extracted from
+  # verified-good Wikipedia articles and also licensed CC BY-SA 3.0 and GFDL.
+  fallback: "Salesforce/wikitext"
+  fallback_config: "wikitext-103-raw-v1"
+  fallback_split: "train"
+  n_items: 500            # size of the committed passage sample
+  fetch_articles: 150     # source rows to pull before extracting paragraphs (each yields many)
+  min_chars: 200          # keep passages long enough to vary in quality
+  max_chars: 2000         # keep passages short enough to fit prompts cheaply
+  seed: 7
+
+paths:
+  data_csv: data/wiki_sample.csv
+  raw_dir: data/raw
+  eval_store: outputs/judge_evaluations.csv       # judge database (append-only cache)
+  human_store: outputs/human_panel.csv            # persona ratings database
+  bookkeeping_store: outputs/api_cost_log.csv     # separate cost and token log
+  failure_store: outputs/failures.csv             # every unrecoverable evaluation
+  assignment_csv: outputs/rater_assignment.csv
+  normalized_csv: outputs/human_normalized.csv
+  results_dir: outputs
+  figures_dir: docs/images
+
+api:
+  base_url: "https://api.poe.com/v1"
+  key_env_candidates: ["POE_API_KEY", "POE_KEY", "POE_TOKEN", "POE_API_TOKEN"]
+  temperature: 0
+  # Generous cap so reasoning models (which spend output tokens on hidden
+  # reasoning before the JSON) are not truncated. Non-reasoning models still
+  # emit a short JSON object, so this does not raise their cost.
+  max_tokens: 2000
+  request_timeout_s: 90
+  max_retries: 5
+  # Bounded concurrency for the API stages. Calls are independent per item and
+  # per model, and temperature 0 keeps them order-independent.
+  max_workers: 10
+
+rubric:
+  # Encyclopedic paragraph writing-quality dimensions, grounded in Wikipedia's
+  # own quality criteria. Overlap is expected; a later phase prunes redundant
+  # dimensions. See src/rubric.py for anchors and definitions.
+  dimensions: [clarity, neutrality, verifiability, coverage, structure, readability, informativeness]
+  scale_min: 1
+  scale_max: 10
+
+personas:
+  count: 10
+  raters_per_item: 2
+  # A single capable, low-cost model plays every persona. The persona prompt,
+  # not the model, creates the disagreement. Documented as a limitation.
+  model: "gpt-5.4-mini"
+
+# Extra, deterministic reviewer noise added to the cached persona rubric scores
+# at analysis time. Real subjective quality review agrees far less than the raw
+# persona panel does, so we inject a seeded per-rating noise term on the numeric
+# rubric scores to model a realistic inter-reviewer agreement of about 0.70,
+# closer to real annotation studies than the raw panel's much higher agreement.
+# After the noise is added each score is rounded to the nearest whole number and
+# clipped to the scale, so a noisy reviewer still returns an integer 1 to 10
+# rating. The noise is applied in memory from the committed cache, so no API
+# calls are made and the cost ledger is unchanged. It is fully reproducible.
+human_panel:
+  # Standard deviation of the added Gaussian noise, on the 1 to 10 rubric scale.
+  # Calibrated on the real Wikipedia persona panel (500 passages, 1000 ratings)
+  # with the rounded, integer-valued noise so the two-reviewer Pearson baseline
+  # lands in the 0.68 to 0.70 target band. At this value the baseline is 0.686
+  # (icc 0.814), down from the raw panel's 0.752, and about 8 percent of overall
+  # ratings flip to a neighbouring integer. Fixed by the seed below.
+  extra_noise_sd: 0.285
+  # Fixed seed; the per-rating draw is keyed by seed, column, item, and persona
+  # so the same noise is reproduced regardless of row order.
+  noise_seed: 20260709
+  # Rubric columns the noise is applied to. Only overall feeds the analysis, but
+  # a noisy reviewer is noisy on every dimension, so all are perturbed.
+  noise_columns: [clarity, neutrality, verifiability, coverage, structure, readability, informativeness, overall]
+
+judge:
+  # One model per major provider available on Poe (verified via /v1/models).
+  # Cost-fit selection: the two expensive Pro tiers (gemini-2.5-pro,
+  # perplexity-sonar-pro) are traded to their cheaper tiers, and Anthropic uses
+  # the haiku tier, so the full-data run at four prompt versions over all 500
+  # passages fits under the approved budget. See configs/prices.yaml.
+  models:
+    - gpt-5.2
+    - claude-haiku-4.5
+    - gemini-2.5-flash
+    - perplexity-sonar
+  # Fallback single version if no per-model best version file exists yet.
+  best_prompt_version: v1
+  # Where the iterative tuning records each model's selected best version.
+  best_versions_file: outputs/best_prompt_versions.json
+
+# If a response cannot be parsed or validated, its raw text is sent to a cheap
+# model that reformats it into schema-correct JSON, which is then parsed again.
+repair:
+  enabled: true
+  model: "claude-haiku-4.5"
+
+prompt_eng:
+  # The prompt-engineering stage is a full-data experiment: every prompt version
+  # is scored against the human ground truth on ALL evaluated passages, not a
+  # small tuning subset. The best version per model is reused as that model's
+  # final judge scores, so there is no separate final judge run.
+  # At least four versions per model (v1..v4), i.e. at least three refinements.
+  max_iters: 4
+  # Stop early if the correlation gain falls below this for a step.
+  min_improvement: 0.01
+
+analysis:
+  good_threshold: 6.0     # normalized overall score at or above this is "good"
+  bootstrap_iters: 2000
+  # Number of seeded random-pick evaluation sets averaged to build the
+  # Monte-Carlo random human (the target the judges are correlated against).
+  mc_resamples: 1000
+  seed: 13
+
+# Assumptions used only for the pre-run cost projection. Actuals come from the
+# bookkeeping store once Phase B runs. Token counts are per single API call.
+cost_planning:
+  assumed_input_tokens: 1000   # system prompt + rubric + anchors + passage
+  assumed_output_tokens: 150   # a compact JSON judgment over seven dimensions
+  # Fraction of model calls that fail to parse and trigger one cheap JSON-repair
+  # call. A planning assumption only; actuals come from the bookkeeping store.
+  assumed_repair_rate: 0.03

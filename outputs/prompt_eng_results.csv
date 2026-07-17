@@ -1,0 +1,17 @@
+model,version,iter,n,pearson,spearman,level_bias,spread_ratio,length_resid_corr,mae,correction_applied
+gpt-5.2,v1,1,500,0.738,0.725,0.848,1.088,-0.145,0.945,(base)
+gpt-5.2,v2,2,500,0.723,0.715,-0.206,0.924,-0.077,0.548,too_generous
+gpt-5.2,v3,3,500,0.703,0.692,-0.446,0.953,-0.101,0.669,substance
+gpt-5.2,v4,4,500,0.704,0.701,-0.404,0.939,-0.051,0.643,length_over
+claude-haiku-4.5,v1,1,500,0.643,0.685,0.77,1.281,-0.004,0.996,(base)
+claude-haiku-4.5,v2,2,500,0.637,0.656,-0.28,1.018,-0.009,0.662,too_generous
+claude-haiku-4.5,v3,3,500,0.66,0.679,-0.3,1.122,0.013,0.658,substance
+claude-haiku-4.5,v4,4,500,0.659,0.671,-0.334,1.104,0.057,0.685,length_over
+gemini-2.5-flash,v1,1,500,0.614,0.593,2.5,1.412,-0.208,2.56,(base)
+gemini-2.5-flash,v2,2,500,0.612,0.579,2.684,1.227,-0.198,2.699,length_under
+gemini-2.5-flash,v3,3,500,0.616,0.583,1.944,1.252,-0.164,1.996,too_generous
+gemini-2.5-flash,v4,4,500,0.616,0.583,1.936,1.328,-0.133,1.997,substance
+perplexity-sonar,v1,1,500,0.581,0.534,1.23,2.063,-0.211,1.803,(base)
+perplexity-sonar,v2,2,500,0.61,0.602,1.308,1.98,-0.184,1.784,length_under
+perplexity-sonar,v3,3,500,0.546,0.527,1.186,2.111,-0.223,1.818,over_dispersed
+perplexity-sonar,v4,4,500,0.5,0.537,1.238,2.03,-0.177,1.849,too_generous

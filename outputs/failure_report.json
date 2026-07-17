@@ -1,0 +1,12 @@
+{
+  "overall": {
+    "attempts": 8006,
+    "ok": 8006,
+    "failures": 0,
+    "failure_rate": 0.0,
+    "parse_success_rate": 1.0,
+    "repaired_recoveries": 55
+  },
+  "reason_counts": {},
+  "n_failed_records": 0
+}

@@ -1,0 +1,9 @@
+{
+  "total_calls": 9061,
+  "total_input_tokens": 9113273,
+  "total_output_tokens": 7208845,
+  "total_cost_usd": 30.73647745,
+  "n_judge_evals": 8006,
+  "cost_per_judge_eval": 0.003839180296027979,
+  "api_usage_share": 1.0
+}

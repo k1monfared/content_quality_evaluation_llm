@@ -1,0 +1,224 @@
+{
+  "composite_type": "fitted",
+  "full_match": 0.6681,
+  "refined_dims": [
+    "neutrality",
+    "verifiability",
+    "coverage",
+    "readability"
+  ],
+  "dropped_dims": [
+    "clarity",
+    "structure",
+    "informativeness"
+  ],
+  "refined_match": 0.6739,
+  "improvement": 0.0059,
+  "drop_one_delta": {
+    "clarity": 0.0037,
+    "neutrality": 0.0002,
+    "verifiability": -0.0096,
+    "coverage": -0.0016,
+    "structure": -0.0008,
+    "readability": -0.0077,
+    "informativeness": 0.0006
+  },
+  "greedy_path": [
+    {
+      "dropped": null,
+      "dims": [
+        "clarity",
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6681
+    },
+    {
+      "dropped": "clarity",
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6718
+    },
+    {
+      "dropped": "informativeness",
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability"
+      ],
+      "match": 0.6738
+    },
+    {
+      "dropped": "structure",
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6739
+    }
+  ],
+  "best_by_size": [
+    {
+      "size": 1,
+      "dims": [
+        "informativeness"
+      ],
+      "match": 0.5887
+    },
+    {
+      "size": 2,
+      "dims": [
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6529
+    },
+    {
+      "size": 3,
+      "dims": [
+        "verifiability",
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6729
+    },
+    {
+      "size": 4,
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6739
+    },
+    {
+      "size": 5,
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability"
+      ],
+      "match": 0.6738
+    },
+    {
+      "size": 6,
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6718
+    },
+    {
+      "size": 7,
+      "dims": [
+        "clarity",
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6681
+    }
+  ],
+  "top_subsets": [
+    {
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6739
+    },
+    {
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability"
+      ],
+      "match": 0.6738
+    },
+    {
+      "dims": [
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability"
+      ],
+      "match": 0.6732
+    },
+    {
+      "dims": [
+        "verifiability",
+        "coverage",
+        "readability"
+      ],
+      "match": 0.6729
+    },
+    {
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6718
+    },
+    {
+      "dims": [
+        "neutrality",
+        "verifiability",
+        "coverage",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6713
+    },
+    {
+      "dims": [
+        "verifiability",
+        "coverage",
+        "structure",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6712
+    },
+    {
+      "dims": [
+        "verifiability",
+        "coverage",
+        "readability",
+        "informativeness"
+      ],
+      "match": 0.6704
+    }
+  ]
+}

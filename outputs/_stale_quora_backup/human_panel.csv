@@ -1,0 +1,301 @@
+item_id,persona_id,persona_key,model,accuracy,completeness,clarity,relevance,depth,evidence,overall,rationale,ok,repaired,timestamp
+item_0000,1,lenient,gpt-5.4-mini,5.0,4.0,6.0,5.0,4.0,3.0,5.0,"A decent high-level answer with some sensible reasoning, but it misses the exact scenario and lacks supporting detail.",1,0,2026-07-04T18:14:20
+item_0001,3,depth,gpt-5.4-mini,6.0,2.0,5.0,5.0,3.0,2.0,3.0,"Useful as a brief list of impactful inventions, but it fails the core task of naming and justifying the most advanced invention.",1,0,2026-07-04T18:14:21
+item_0002,3,depth,gpt-5.4-mini,6.0,3.0,7.0,6.0,3.0,4.0,4.0,"Useful as a light recommendation to consider lighter basses, but it only partially answers the question and lacks depth and support.",1,0,2026-07-04T18:14:21
+item_0004,6,anti_hedge,gpt-5.4-mini,4.0,4.0,3.0,4.0,2.0,1,3.0,"It is entertaining but weak as an answer: messy, unsupported, and only partially on point.",1,0,2026-07-04T18:14:21
+item_0004,5,citations,gpt-5.4-mini,2.0,3.0,3.0,4.0,1,1,2.0,"A joke-heavy, unsourced response that only loosely addresses the question and relies on unsupported insinuations.",1,0,2026-07-04T18:14:21
+item_0003,4,brevity,gpt-5.4-mini,6.0,5.0,7.0,6.0,4.0,3.0,5.0,A decent but generic answer that is slightly misframed and too thin to be strong.,1,0,2026-07-04T18:14:21
+item_0000,2,harsh,gpt-5.4-mini,3.0,2.0,5.0,4.0,3.0,2.0,3.0,"A weak answer to the asked question: partially readable, but largely mismatched, underdeveloped, and unsupported.",1,0,2026-07-04T18:14:21
+item_0001,2,harsh,gpt-5.4-mini,5.0,2.0,4.0,4.0,3.0,2.0,3.0,"A broad but weak response: informative at a high level, yet it fails to answer the question asked.",1,0,2026-07-04T18:14:21
+item_0003,5,citations,gpt-5.4-mini,6.0,4.0,7.0,6.0,2.0,1,4.0,"A thin, partially relevant answer that names some useful tools but lacks support, detail, and a true focus on blogging rather than SEO.",1,0,2026-07-04T18:14:21
+item_0005,6,anti_hedge,gpt-5.4-mini,6.0,5.0,7.0,9.0,6.0,4.0,6.0,"A solid, on-topic response with a clear stance, but it is somewhat narrow, lightly supported, and not fully convincing on the broader question.",1,0,2026-07-04T18:14:23
+item_0002,4,brevity,gpt-5.4-mini,6.0,3.0,6.0,4.0,3.0,4.0,4.0,"Useful as a lightweight-bass suggestion, but it fails to directly answer the question.",1,0,2026-07-04T18:14:23
+item_0006,7,grammar,gpt-5.4-mini,5.0,5.0,3.0,8.0,5.0,4.0,4.0,"The answer is directionally right but poorly written and only partially reliable, so it is average at best.",1,0,2026-07-04T18:14:23
+item_0005,7,grammar,gpt-5.4-mini,6.0,5.0,6.0,8.0,5.0,3.0,6.0,"A solid, on-topic response with a sensible takeaway, but it is under-supported, somewhat broad, and not especially polished.",1,0,2026-07-04T18:14:23
+item_0009,1,lenient,gpt-5.4-mini,7.0,4.0,6.0,7.0,5.0,2.0,5.0,"A positive, decent response with useful life advice, but it falls short of the requested 10-item list and lacks structure.",1,0,2026-07-04T18:14:23
+item_0007,9,empathy,gpt-5.4-mini,4.0,5.0,4.0,7.0,4.0,3.0,5.0,"Warm in spirit and on-topic, but weakened by math errors, loose organization, and only moderate emotional impact.",1,0,2026-07-04T18:14:24
+item_0008,9,empathy,gpt-5.4-mini,4.0,5.0,6.0,8.0,4.0,2.0,5.0,"A helpful, on-topic attempt with a decent instinct, but it is under-supported and includes some questionable factual claims.",1,0,2026-07-04T18:14:24
+item_0008,10,skeptic,gpt-5.4-mini,4.0,4.0,6.0,8.0,3.0,2.0,4.0,"A plausible but shaky answer: on-topic and somewhat useful, yet too unsourced and likely contains factual overreach.",1,0,2026-07-04T18:14:24
+item_0007,8,practical,gpt-5.4-mini,4.0,5.0,5.0,7.0,4.0,2.0,5.0,"A usable attempt with decent intuition, but the mathematical mistakes and weak prose keep it from being strongly effective.",1,0,2026-07-04T18:14:25
+item_0010,1,lenient,gpt-5.4-mini,6.0,4.0,5.0,6.0,5.0,2.0,5.0,"A decent, earnest response with some useful perspective, but it is too indirect and lightly supported to fully answer the question.",1,0,2026-07-04T18:14:25
+item_0011,3,depth,gpt-5.4-mini,3.0,2.0,6.0,5.0,2.0,1,3.0,"A brief, polished-sounding answer that is directionally about the right topic, but it is too vague and makes questionable bias claims without support.",1,0,2026-07-04T18:14:26
+item_0010,2,harsh,gpt-5.4-mini,5.0,3.0,5.0,4.0,4.0,2.0,4.0,"A mildly insightful but mostly indirect answer that fails to give a clear, well-supported comparison.",1,0,2026-07-04T18:14:26
+item_0012,4,brevity,gpt-5.4-mini,2.0,4.0,4.0,6.0,3.0,1,3.0,A partially relevant but seriously inaccurate explanation; it does not reliably answer the question.,1,0,2026-07-04T18:14:26
+item_0011,2,harsh,gpt-5.4-mini,3.0,2.0,5.0,6.0,2.0,1,3.0,"A vague, unsupported answer that names reputable outlets without justifying why they are the most unbiased.",1,0,2026-07-04T18:14:26
+item_0013,4,brevity,gpt-5.4-mini,4.0,5.0,3.0,5.0,3.0,1,4.0,"A weak, messy list that partially answers the question but lacks credibility and clarity.",1,0,2026-07-04T18:14:27
+item_0012,3,depth,gpt-5.4-mini,2.0,3.0,5.0,6.0,2.0,1,2.0,"A partial attempt at explanation, but it is too inaccurate and oversimplified to be a reliable answer to the question.",1,0,2026-07-04T18:14:27
+item_0014,6,anti_hedge,gpt-5.4-mini,3.0,4.0,6.0,6.0,2.0,2.0,4.0,"A direct but unreliable answer: useful only as a rough list, not as a trustworthy response to the question.",1,0,2026-07-04T18:14:28
+item_0015,7,grammar,gpt-5.4-mini,3.0,1,4.0,3.0,1,1,2.0,"A short, unsupported guess that does not really answer the question and reads more like a fragment than a response.",1,0,2026-07-04T18:14:28
+item_0015,6,anti_hedge,gpt-5.4-mini,3.0,1,4.0,4.0,1,1,2.0,"A short, unsupported, and mostly off-target answer that does not meaningfully address the question.",1,0,2026-07-04T18:14:28
+item_0016,7,grammar,gpt-5.4-mini,5.0,4.0,4.0,6.0,5.0,2.0,4.0,"A partially correct but loosely written answer that gestures at the right explanation without being crisp, well supported, or fully on target.",1,0,2026-07-04T18:14:29
+item_0006,8,practical,gpt-5.4-mini,6.0,5.0,5.0,8.0,6.0,4.0,6.0,"A useful rough explanation with a good intuitive example, but not as clear or accurate as it could be.",1,0,2026-07-04T18:14:29
+item_0014,5,citations,gpt-5.4-mini,4.0,5.0,6.0,8.0,3.0,2.0,4.0,"A direct but shaky answer: relevant and readable, yet its count and classification are not properly supported and may be inaccurate.",1,0,2026-07-04T18:14:29
+item_0013,5,citations,gpt-5.4-mini,4.0,5.0,4.0,7.0,3.0,1,4.0,"A usable but weak list: on-topic and somewhat helpful, but unsupported, poorly written, and not truly evidence-based.",1,0,2026-07-04T18:14:29
+item_0017,8,practical,gpt-5.4-mini,6.0,7.0,5.0,7.0,5.0,4.0,6.0,"A usable direct answer with a concrete anecdote, but messy, lightly supported, and more verbose than necessary.",1,0,2026-07-04T18:14:29
+item_0016,8,practical,gpt-5.4-mini,6.0,4.0,6.0,6.0,5.0,3.0,5.0,"A partially useful explanation, but it is incomplete, somewhat anecdotal, and misses the most practical reasons special operators are built the way they are.",1,0,2026-07-04T18:14:29
+item_0017,9,empathy,gpt-5.4-mini,7.0,8.0,5.0,8.0,5.0,4.0,7.0,"A decent firsthand anecdote that answers the question, but it is informal, loosely organized, and lightly supported.",1,0,2026-07-04T18:14:30
+item_0018,10,skeptic,gpt-5.4-mini,5.0,4.0,4.0,6.0,4.0,4.0,4.0,"Partially helpful, but too confused and incomplete to be trusted as a solid answer.",1,0,2026-07-04T18:14:30
+item_0019,1,lenient,gpt-5.4-mini,4.0,5.0,6.0,7.0,4.0,2.0,5.0,"A partly useful answer that correctly signals the election cannot be casually postponed, but it is weakened by inaccuracies and missing legal context.",1,0,2026-07-04T18:14:31
+item_0020,1,lenient,gpt-5.4-mini,7.0,6.0,7.0,9.0,6.0,5.0,7.0,"A solid, helpful recommendation that is probably useful to the asker, though it is somewhat narrow and not fully targeted to both uploaded minds and AI.",1,0,2026-07-04T18:14:31
+item_0021,2,harsh,gpt-5.4-mini,4.0,2.0,5.0,4.0,4.0,3.0,3.0,"Some relevant discussion, but it fails the core task by not giving an answer and relying on broad, unsupported claims.",1,0,2026-07-04T18:14:31
+item_0021,3,depth,gpt-5.4-mini,4.0,3.0,6.0,6.0,5.0,3.0,4.0,A mildly informative but ultimately noncommittal response that misses the core ask and lacks strong support.,1,0,2026-07-04T18:14:32
+item_0020,2,harsh,gpt-5.4-mini,7.0,5.0,6.0,8.0,4.0,3.0,6.0,"A decent recommendation, but narrow, lightly supported, and not fully responsive to the exact wording of the question.",1,0,2026-07-04T18:14:32
+item_0019,10,skeptic,gpt-5.4-mini,2.0,4.0,5.0,6.0,3.0,1,3.0,A partially responsive answer with serious factual errors and weak legal support; useful only in limited part.,1,0,2026-07-04T18:14:32
+item_0023,4,brevity,gpt-5.4-mini,2.0,1,2.0,1,1,1,1,It fails to answer the question and reads like spam.,1,0,2026-07-04T18:14:32
+item_0022,3,depth,gpt-5.4-mini,7.0,6.0,7.0,8.0,6.0,4.0,6.0,"A solid example that is relevant and mostly accurate, but it is somewhat narrow, lightly supported, and more anecdotal than authoritative.",1,0,2026-07-04T18:14:33
+item_0023,5,citations,gpt-5.4-mini,2.0,1,2.0,1,1,1,1,This is mostly promotional filler and fails to meaningfully answer the question.,1,0,2026-07-04T18:14:33
+item_0018,9,empathy,gpt-5.4-mini,5.0,5.0,4.0,6.0,5.0,5.0,5.0,"Helpful in identifying the missing ampersands and the role of scanf's return value, but it is muddled, only partly answers the question, and contains a few misleading points.",1,0,2026-07-04T18:14:34
+item_0024,5,citations,gpt-5.4-mini,4.0,6.0,4.0,6.0,5.0,2.0,4.0,"A recognizable personal explanation, but poorly organized and heavy on unsupported generalizations, which weakens its usefulness.",1,0,2026-07-04T18:14:34
+item_0024,6,anti_hedge,gpt-5.4-mini,5.0,6.0,4.0,6.0,5.0,2.0,5.0,"A reasonably relevant answer with a clear motive, but it is messy, unsupported, and not fully responsive.",1,0,2026-07-04T18:14:34
+item_0025,6,anti_hedge,gpt-5.4-mini,7.0,6.0,8.0,9.0,5.0,2.0,6.0,"A clear, on-topic answer with reasonable content, but it is generic, lightly supported, and not especially deep.",1,0,2026-07-04T18:14:34
+item_0022,4,brevity,gpt-5.4-mini,6.0,6.0,5.0,6.0,5.0,3.0,5.0,"A plausible example, but too chatty and partly inaccurate for a strong answer.",1,0,2026-07-04T18:14:34
+item_0025,7,grammar,gpt-5.4-mini,7.0,6.0,7.0,8.0,5.0,2.0,6.0,"A solid, on-topic answer with clear writing, but it is generic, lightly supported, and marred by an odd promotional tag.",1,0,2026-07-04T18:14:35
+item_0026,8,practical,gpt-5.4-mini,7.0,3.0,7.0,5.0,3.0,2.0,4.0,"Usable as a general encouragement note, but not a strong answer because it fails to provide the easy recipes the user asked for.",1,0,2026-07-04T18:14:35
+item_0026,7,grammar,gpt-5.4-mini,6.0,3.0,5.0,5.0,3.0,2.0,4.0,"Helpful as beginner cooking encouragement, but it misses the core ask and is presented in a slightly messy way.",1,0,2026-07-04T18:14:35
+item_0009,10,skeptic,gpt-5.4-mini,4.0,2.0,5.0,5.0,3.0,1,3.0,"A mildly useful piece of moral advice, but it fails the core task and is too incomplete to be considered a good answer.",1,0,2026-07-04T18:14:36
+item_0027,9,empathy,gpt-5.4-mini,6.0,5.0,6.0,8.0,5.0,2.0,6.0,"Helpful and on-topic, but somewhat oversimplified and a bit too confident about a one-size-fits-all career path.",1,0,2026-07-04T18:14:36
+item_0027,8,practical,gpt-5.4-mini,6.0,5.0,7.0,7.0,5.0,2.0,5.0,"Useful as generic career advice, but it does not directly and convincingly answer the user's actual question about whether to begin with a PhD in cryptography.",1,0,2026-07-04T18:14:36
+item_0028,10,skeptic,gpt-5.4-mini,6.0,4.0,8.0,7.0,3.0,2.0,5.0,"A decent but minimal reply with a couple of true facts, weakened by lack of detail and unsupported claims.",1,0,2026-07-04T18:14:36
+item_0029,1,lenient,gpt-5.4-mini,5.0,5.0,6.0,7.0,4.0,3.0,5.0,"Somewhat useful as a cautionary personal story, but not a strong factual answer to the question.",1,0,2026-07-04T18:14:36
+item_0029,10,skeptic,gpt-5.4-mini,4.0,4.0,6.0,6.0,3.0,2.0,4.0,"Useful as a cautionary story, but not a dependable or complete answer to what usually happens after a 100 mph stop.",1,0,2026-07-04T18:14:36
+item_0030,1,lenient,gpt-5.4-mini,7.0,6.0,5.0,8.0,6.0,3.0,6.0,"A decent, thoughtful response that answers the question, though it is informal and not especially polished.",1,0,2026-07-04T18:14:36
+item_0030,2,harsh,gpt-5.4-mini,5.0,4.0,4.0,7.0,4.0,2.0,5.0,"A decent subjective list, but it is messy, underdeveloped, and not especially informative.",1,0,2026-07-04T18:14:37
+item_0028,9,empathy,gpt-5.4-mini,7.0,4.0,7.0,6.0,3.0,2.0,5.0,"A decent, friendly start with a few real examples, but too brief, unsupported, and slightly padded to be strong.",1,0,2026-07-04T18:14:37
+item_0031,2,harsh,gpt-5.4-mini,4.0,3.0,3.0,5.0,3.0,1,3.0,"A weak, vague answer that is on-topic but poorly explained and insufficiently supported.",1,0,2026-07-04T18:14:37
+item_0032,3,depth,gpt-5.4-mini,2.0,1,2.0,2.0,1,1,1,"A superficial, poorly written response that fails to deliver the requested information.",1,0,2026-07-04T18:14:37
+item_0032,4,brevity,gpt-5.4-mini,1,1,2.0,2.0,1,1,1,Unhelpful and mostly filler; it fails to answer the question directly.,1,0,2026-07-04T18:14:37
+item_0033,4,brevity,gpt-5.4-mini,6.0,5.0,8.0,9.0,5.0,2.0,6.0,"Concise and relevant, but too sweeping and unsupported.",1,0,2026-07-04T18:14:38
+item_0033,5,citations,gpt-5.4-mini,5.0,4.0,8.0,9.0,4.0,1,4.0,"A concise and relevant answer, but too unsupported and overly simplistic to be strong.",1,0,2026-07-04T18:14:38
+item_0034,6,anti_hedge,gpt-5.4-mini,7.0,5.0,6.0,8.0,4.0,4.0,6.0,"A decent, on-topic answer, but too snippet-like and underdeveloped to be strong.",1,0,2026-07-04T18:14:38
+item_0034,5,citations,gpt-5.4-mini,4.0,4.0,4.0,7.0,3.0,2.0,4.0,"Partially on-topic but weakly supported, poorly framed, and too thin to be a strong answer.",1,0,2026-07-04T18:14:39
+item_0035,6,anti_hedge,gpt-5.4-mini,1,1,2.0,1,1,1,1,"This is essentially a spammy non-answer: off-topic, unsupported, and not useful for the question asked.",1,0,2026-07-04T18:14:39
+item_0036,8,practical,gpt-5.4-mini,6.0,4.0,8.0,8.0,3.0,2.0,5.0,"Useful as a short shortlist, but not enough for someone who wants the cheapest country specifically.",1,0,2026-07-04T18:14:39
+item_0036,7,grammar,gpt-5.4-mini,5.0,4.0,5.0,8.0,3.0,2.0,4.0,"A decent brainstorming response, but too vague, unsupported, and poorly focused to be a strong answer to the question.",1,0,2026-07-04T18:14:40
+item_0035,7,grammar,gpt-5.4-mini,1,1,2.0,1,1,1,1,"A thin, promotional, and misleading response that fails to address the question in a useful way.",1,0,2026-07-04T18:14:40
+item_0038,9,empathy,gpt-5.4-mini,3.0,1,4.0,3.0,1,1,2.0,A confident but rude non-answer that gives little useful information and may mislead the asker.,1,0,2026-07-04T18:14:40
+item_0038,10,skeptic,gpt-5.4-mini,2.0,2.0,5.0,4.0,1,1,2.0,A confident but shaky response: it contains likely inaccuracies and fails to explain the actual process the question asks about.,1,0,2026-07-04T18:14:40
+item_0031,3,depth,gpt-5.4-mini,3.0,3.0,4.0,5.0,3.0,1,3.0,A partially on-topic but weak and unsupported answer that feels more like a speculative assertion than a real explanation.,1,0,2026-07-04T18:14:40
+item_0039,1,lenient,gpt-5.4-mini,5.0,1,4.0,3.0,2.0,1,2.0,"A polite but largely unhelpful answer to the actual question, with only a minor related suggestion.",1,0,2026-07-04T18:14:41
+item_0039,10,skeptic,gpt-5.4-mini,3.0,1,5.0,2.0,1,1,2.0,"This is mostly a non-answer: mildly related, but it does not solve the woodworking problem asked.",1,0,2026-07-04T18:14:41
+item_0037,8,practical,gpt-5.4-mini,5.0,4.0,6.0,6.0,4.0,3.0,5.0,"A partly useful explanation of boycotts, but it is underdeveloped, unsourced, and not especially practical for the reader.",1,0,2026-07-04T18:14:41
+item_0040,1,lenient,gpt-5.4-mini,2.0,1,3.0,3.0,1,1,2.0,A heartfelt but very thin response that does not really address the question and includes an unsupported claim.,1,0,2026-07-04T18:14:41
+item_0037,9,empathy,gpt-5.4-mini,5.0,5.0,6.0,6.0,4.0,3.0,5.0,"A decent but sloppy explanation of boycott-style consumer choice, weakened by thin evidence and an awkward, somewhat loaded framing.",1,0,2026-07-04T18:14:41
+item_0040,2,harsh,gpt-5.4-mini,2.0,1,3.0,3.0,1,1,1,"A thin, unsupported, and off-target response that does not meaningfully address the question.",1,0,2026-07-04T18:14:42
+item_0041,2,harsh,gpt-5.4-mini,2.0,1,4.0,1,1,1,1,A non-answer to the question: it offers generic plant advice instead of explaining aloe toxicity in cats.,1,0,2026-07-04T18:14:42
+item_0043,4,brevity,gpt-5.4-mini,3.0,3.0,4.0,5.0,3.0,1,3.0,"A vague, partly misleading response that does not directly answer the question well.",1,0,2026-07-04T18:14:43
+item_0044,5,citations,gpt-5.4-mini,2.0,1,4.0,2.0,2.0,1,1,"A vague, unsupported answer that does not actually address how many times a bottle can be refilled.",1,0,2026-07-04T18:14:43
+item_0042,3,depth,gpt-5.4-mini,2.0,1,2.0,3.0,1,1,1,"A thin, judgmental reply that does not properly answer the question and contains misleading simplifications about birth certificate changes.",1,0,2026-07-04T18:14:43
+item_0044,6,anti_hedge,gpt-5.4-mini,2.0,1,4.0,4.0,2.0,1,2.0,"A weak, indirect answer that misses the actual question and gives questionable guidance.",1,0,2026-07-04T18:14:43
+item_0041,3,depth,gpt-5.4-mini,2.0,1,4.0,2.0,1,1,1,This is largely non-responsive to the question and offers no substantive explanation of why aloe is poisonous to cats.,1,0,2026-07-04T18:14:43
+item_0045,6,anti_hedge,gpt-5.4-mini,3.0,1,5.0,5.0,2.0,2.0,3.0,"A clear personal comment, but it does not answer the question in a useful way and lacks any actual estimate or evidence.",1,0,2026-07-04T18:14:44
+item_0045,7,grammar,gpt-5.4-mini,6.0,3.0,6.0,7.0,3.0,1,4.0,"Readable and on topic, but it misses the question's general intent and is too anecdotal to be a strong answer.",1,0,2026-07-04T18:14:44
+item_0046,7,grammar,gpt-5.4-mini,6.0,6.0,5.0,8.0,5.0,3.0,5.0,"A serviceable but thin answer; readable enough, yet padded with promotional links and lacking substance or polish.",1,0,2026-07-04T18:14:44
+item_0042,4,brevity,gpt-5.4-mini,2.0,2.0,3.0,5.0,1,1,2.0,"A partial, poorly written response with misleading legal advice and unnecessary judgment.",1,0,2026-07-04T18:14:45
+item_0043,5,citations,gpt-5.4-mini,5.0,4.0,4.0,7.0,3.0,1,4.0,"A somewhat useful informal answer, but it lacks authoritative guidance, clarity, and support, so it is only moderately helpful.",1,0,2026-07-04T18:14:45
+item_0046,8,practical,gpt-5.4-mini,7.0,6.0,7.0,8.0,5.0,4.0,6.0,"Useful as a general starting point, but too generic and lightly promotional to be a strong practical answer.",1,0,2026-07-04T18:14:45
+item_0047,8,practical,gpt-5.4-mini,6.0,4.0,7.0,6.0,5.0,2.0,5.0,"A decent reflective comment, but not a strong answer to the actual question because it gives no concrete help for why rejection is happening or what to do about it.",1,0,2026-07-04T18:14:45
+item_0047,9,empathy,gpt-5.4-mini,6.0,5.0,7.0,7.0,6.0,2.0,6.0,"Thoughtful and empathetic in tone, with a useful reframing, but it is incomplete and not well supported for someone seeking a direct explanation.",1,0,2026-07-04T18:14:45
+item_0048,9,empathy,gpt-5.4-mini,6.0,5.0,5.0,8.0,5.0,4.0,6.0,"A decent high-level answer with the right general conclusion, but it is uneven in tone, light on evidence, and not as careful as it could be.",1,0,2026-07-04T18:14:45
+item_0049,1,lenient,gpt-5.4-mini,8.0,8.0,7.0,9.0,8.0,5.0,8.0,"A useful, knowledgeable answer with strong practical coverage, only limited by lack of sourcing and a slightly fragmented presentation.",1,0,2026-07-04T18:14:45
+item_0048,10,skeptic,gpt-5.4-mini,5.0,6.0,6.0,7.0,5.0,4.0,5.0,"A partly useful but biased and somewhat sloppy answer: it gets the general scientific objection right, yet it relies on overstatement, weak phrasing, and thin support.",1,0,2026-07-04T18:14:46
+item_0050,1,lenient,gpt-5.4-mini,6.0,5.0,6.0,8.0,4.0,2.0,5.0,"A decent, partially correct response that shows some understanding, but it is too vague to fully satisfy the question.",1,0,2026-07-04T18:14:46
+item_0049,10,skeptic,gpt-5.4-mini,7.0,7.0,7.0,8.0,7.0,4.0,7.0,"A useful and mostly correct answer with practical examples, but it is not especially precise and includes a few unsupported or potentially misleading details.",1,0,2026-07-04T18:14:47
+item_0050,2,harsh,gpt-5.4-mini,4.0,3.0,5.0,6.0,2.0,1,3.0,"A vague partial answer that misses the key point: the question asks for Six Sigma methods, not just a general statement about averages and standard deviation.",1,0,2026-07-04T18:14:47
+item_0052,4,brevity,gpt-5.4-mini,7.0,1,6.0,3.0,1,1,2.0,"Polite and on topic, but it fails to provide the requested proof or explanation.",1,0,2026-07-04T18:14:47
+item_0052,3,depth,gpt-5.4-mini,6.0,1,4.0,3.0,1,1,2.0,A correct but extremely thin response that fails to deliver the requested proof or explanation.,1,0,2026-07-04T18:14:47
+item_0051,2,harsh,gpt-5.4-mini,4.0,3.0,3.0,6.0,2.0,1,3.0,"A thin advertisement rather than a helpful answer; it is on-topic but weak, unsupported, and incomplete.",1,0,2026-07-04T18:14:47
+item_0051,3,depth,gpt-5.4-mini,4.0,3.0,4.0,6.0,2.0,1,3.0,"A thin promotional response that is relevant but not very helpful, especially for someone seeking options or guidance in Noida.",1,0,2026-07-04T18:14:47
+item_0053,4,brevity,gpt-5.4-mini,4.0,5.0,5.0,6.0,3.0,1,4.0,"A partial, opinionated answer that hits the topics but is too vague and unsupported to be strong.",1,0,2026-07-04T18:14:47
+item_0053,5,citations,gpt-5.4-mini,4.0,4.0,5.0,7.0,3.0,1,4.0,A partially on-topic but thin and overly absolute answer with weak evidence and limited accuracy.,1,0,2026-07-04T18:14:48
+item_0054,5,citations,gpt-5.4-mini,3.0,4.0,4.0,6.0,3.0,1,3.0,"A weak, opinionated answer with minimal support; it is on topic but not persuasive or well-grounded.",1,0,2026-07-04T18:14:48
+item_0054,6,anti_hedge,gpt-5.4-mini,3.0,3.0,4.0,5.0,3.0,1,3.0,"A partial, opinionated answer that gestures at a preference but fails to answer the question cleanly or convincingly.",1,0,2026-07-04T18:14:49
+item_0055,6,anti_hedge,gpt-5.4-mini,6.0,5.0,8.0,9.0,3.0,2.0,5.0,"A clear, on-topic answer, but too thin and a bit too casual for a serious question about the crash.",1,0,2026-07-04T18:14:49
+item_0055,7,grammar,gpt-5.4-mini,6.0,3.0,7.0,9.0,2.0,1,4.0,"A brief, on-topic answer, but too thin and unsupported to be satisfying or authoritative.",1,0,2026-07-04T18:14:49
+item_0056,8,practical,gpt-5.4-mini,6.0,3.0,4.0,5.0,2.0,3.0,3.0,"A partial pointer in the right direction, but not a real answer for someone who wants the differences explained.",1,0,2026-07-04T18:14:49
+item_0056,7,grammar,gpt-5.4-mini,5.0,3.0,4.0,6.0,2.0,3.0,4.0,"A weak, underdeveloped answer: technically on topic, but vague, incomplete, and poorly presented.",1,0,2026-07-04T18:14:49
+item_0057,8,practical,gpt-5.4-mini,5.0,5.0,5.0,6.0,5.0,2.0,5.0,"A thoughtful but informal take that is partially useful, yet too unsupported and digressive to be strongly reliable.",1,0,2026-07-04T18:14:50
+item_0057,9,empathy,gpt-5.4-mini,6.0,6.0,5.0,7.0,6.0,3.0,5.0,"Warm, opinionated, and partially insightful, but too sweeping and unfocused to be a strong answer to the question.",1,0,2026-07-04T18:14:50
+item_0058,9,empathy,gpt-5.4-mini,6.0,4.0,7.0,5.0,3.0,2.0,5.0,"Warm and understandable, but it feels more like a personal reflection than a helpful answer to the question.",1,0,2026-07-04T18:14:50
+item_0058,10,skeptic,gpt-5.4-mini,4.0,3.0,7.0,5.0,3.0,2.0,4.0,A coherent but generic personal reflection that only partially answers the question and lacks practical value.,1,0,2026-07-04T18:14:50
+item_0059,1,lenient,gpt-5.4-mini,4.0,3.0,5.0,4.0,3.0,1,4.0,"A partial, loosely related response that does not really answer the question, though it is readable and shows some effort.",1,0,2026-07-04T18:14:50
+item_0060,1,lenient,gpt-5.4-mini,7.0,6.0,6.0,8.0,4.0,2.0,6.0,"A decent, useful list of cautionary life advice, though it is generic and lightly presented rather than especially thoughtful or well supported.",1,0,2026-07-04T18:14:51
+item_0061,2,harsh,gpt-5.4-mini,2.0,2.0,2.0,3.0,2.0,1,2.0,"A largely unsupported, unclear, and inaccurate answer that fails to properly explain the incident.",1,0,2026-07-04T18:14:51
+item_0059,10,skeptic,gpt-5.4-mini,2.0,1,4.0,3.0,2.0,1,2.0,"A vague, unsupported response that does not answer the question asked.",1,0,2026-07-04T18:14:51
+item_0062,4,brevity,gpt-5.4-mini,6.0,3.0,8.0,6.0,2.0,1,4.0,A concise but incomplete answer that avoids the hard part of the question.,1,0,2026-07-04T18:14:52
+item_0062,3,depth,gpt-5.4-mini,6.0,2.0,7.0,6.0,1,1,3.0,"A minimal, partly correct answer that avoids dishonesty but fails to engage the real question about tactful honesty in a reference letter.",1,0,2026-07-04T18:14:52
+item_0060,2,harsh,gpt-5.4-mini,5.0,4.0,5.0,6.0,2.0,1,4.0,"A decent motivational list, but it only partially answers the question and lacks structure, support, and specificity.",1,0,2026-07-04T18:14:52
+item_0063,5,citations,gpt-5.4-mini,5.0,6.0,7.0,8.0,4.0,2.0,5.0,"A readable skeptical take, but too unsourced and overstated to be strongly convincing or authoritative.",1,0,2026-07-04T18:14:52
+item_0063,4,brevity,gpt-5.4-mini,6.0,6.0,6.0,7.0,5.0,4.0,6.0,"A decent skeptical response, but too unsupported and meandering to be strong.",1,0,2026-07-04T18:14:52
+item_0064,5,citations,gpt-5.4-mini,2.0,1,5.0,3.0,1,1,2.0,"A thin, unsupported, and poorly targeted answer that does not actually address the question as asked.",1,0,2026-07-04T18:14:52
+item_0064,6,anti_hedge,gpt-5.4-mini,3.0,2.0,5.0,4.0,1,1,2.0,A confident but unsupported answer that fails to address the actual question in any useful way.,1,0,2026-07-04T18:14:53
+item_0061,3,depth,gpt-5.4-mini,2.0,2.0,2.0,4.0,2.0,1,2.0,"A largely speculative, poorly organized answer that is neither reliable nor directly responsive, with only minor topical connection.",1,0,2026-07-04T18:14:53
+item_0065,6,anti_hedge,gpt-5.4-mini,6.0,7.0,7.0,9.0,6.0,3.0,6.0,"A decent, mostly correct answer with the right core idea, but it is too loose on facts and too light on evidence to be strong.",1,0,2026-07-04T18:14:54
+item_0066,8,practical,gpt-5.4-mini,5.0,4.0,4.0,8.0,3.0,1,4.0,"Usefully points in the right direction, but it is too vague and poorly expressed to be reliable or especially helpful.",1,0,2026-07-04T18:14:54
+item_0065,7,grammar,gpt-5.4-mini,6.0,6.0,5.0,8.0,5.0,3.0,6.0,"A mostly correct answer with a solid central idea, but weakened by imprecise claims, weak support, and rough presentation.",1,0,2026-07-04T18:14:54
+item_0066,7,grammar,gpt-5.4-mini,5.0,4.0,3.0,8.0,3.0,1,4.0,"A mostly on-topic answer with a roughly correct takeaway, but the writing is sloppy and the explanation is thin and unsupported.",1,0,2026-07-04T18:14:54
+item_0067,9,empathy,gpt-5.4-mini,5.0,6.0,5.0,4.0,4.0,2.0,5.0,"A decent starter list of popular photo editing apps, but the lack of nuance and the spammy ad noticeably reduce its quality.",1,0,2026-07-04T18:14:54
+item_0067,8,practical,gpt-5.4-mini,6.0,6.0,6.0,4.0,5.0,2.0,5.0,"Useful as a quick starter list, but the irrelevant promo, weak support, and lack of decision guidance make it only moderately helpful.",1,0,2026-07-04T18:14:54
+item_0068,10,skeptic,gpt-5.4-mini,3.0,3.0,6.0,8.0,2.0,1,3.0,"A relevant but thin complaint; useful as a warning, but too unsupported to be a reliable answer.",1,0,2026-07-04T18:14:54
+item_0068,9,empathy,gpt-5.4-mini,5.0,4.0,5.0,8.0,3.0,2.0,4.0,"A somewhat useful cautionary anecdote, but too narrow, lightly supported, and not very polished for a solid answer to the scam question.",1,0,2026-07-04T18:14:54
+item_0069,10,skeptic,gpt-5.4-mini,2.0,2.0,4.0,6.0,4.0,2.0,2.0,A plausible-looking but ultimately unreliable proof attempt with a serious logical gap.,1,0,2026-07-04T18:14:55
+item_0070,1,lenient,gpt-5.4-mini,7.0,7.0,8.0,9.0,6.0,4.0,7.0,"A good, helpful answer that likely captures the gist, with only minor over-speculation.",1,0,2026-07-04T18:14:56
+item_0069,1,lenient,gpt-5.4-mini,7.0,8.0,6.0,9.0,6.0,5.0,7.0,"A good, mostly correct modular arithmetic proof with minor sloppiness and limited exposition, but still clearly useful.",1,0,2026-07-04T18:14:56
+item_0072,4,brevity,gpt-5.4-mini,5.0,2.0,4.0,5.0,2.0,1,3.0,"A partial, underdeveloped response that gestures at the right idea but fails to answer the question directly.",1,0,2026-07-04T18:14:56
+item_0070,2,harsh,gpt-5.4-mini,7.0,6.0,8.0,9.0,5.0,2.0,6.0,"A reasonable and likely explanation, but not especially rigorous or fully qualified.",1,0,2026-07-04T18:14:56
+item_0073,4,brevity,gpt-5.4-mini,4.0,2.0,4.0,3.0,1,2.0,2.0,A thin product pitch that only loosely relates to the question and does not actually answer it.,1,0,2026-07-04T18:14:56
+item_0071,2,harsh,gpt-5.4-mini,2.0,1,4.0,3.0,2.0,1,2.0,"This is more a rant than an answer, with no concrete identification of who represents the GOP in 2021.",1,0,2026-07-04T18:14:56
+item_0071,3,depth,gpt-5.4-mini,2.0,1,5.0,4.0,2.0,1,2.0,A pointed but unsupported opinion that does not answer the question asked.,1,0,2026-07-04T18:14:56
+item_0073,5,citations,gpt-5.4-mini,3.0,2.0,4.0,4.0,1,2.0,2.0,"A thin, link-only response that does not actually answer the question and is poorly supported.",1,0,2026-07-04T18:14:56
+item_0072,3,depth,gpt-5.4-mini,5.0,2.0,4.0,5.0,2.0,1,3.0,"A partial, generic response that is only mildly useful and misses the main point of the question.",1,0,2026-07-04T18:14:56
+item_0075,6,anti_hedge,gpt-5.4-mini,1,1,2.0,1,1,1,1,"A poor, promotional non-answer that fails to address the question.",1,0,2026-07-04T18:14:58
+item_0074,6,anti_hedge,gpt-5.4-mini,6.0,3.0,6.0,7.0,2.0,1,4.0,"A blunt but incomplete answer that gestures at the core issue, yet fails to explain the real reasons asteroid transport is impractical.",1,0,2026-07-04T18:14:58
+item_0075,7,grammar,gpt-5.4-mini,1,1,2.0,1,1,1,1,"A spammy, off-topic response with poor writing and no substantive answer.",1,0,2026-07-04T18:14:58
+item_0074,5,citations,gpt-5.4-mini,5.0,2.0,6.0,6.0,2.0,1,4.0,"A reasonable intuitive objection, but too shallow and unsupported to be a strong answer to the question.",1,0,2026-07-04T18:14:58
+item_0076,8,practical,gpt-5.4-mini,2.0,1,5.0,1,2.0,2.0,1,"Usable as a basic pitch for social media marketing, but it fails the question entirely, so the answer is poor.",1,0,2026-07-04T18:14:58
+item_0076,7,grammar,gpt-5.4-mini,1,1,3.0,1,1,2.0,1,A polished-sounding but fundamentally incorrect response that fails to answer the question asked.,1,0,2026-07-04T18:14:58
+item_0078,9,empathy,gpt-5.4-mini,7.0,6.0,5.0,4.0,4.0,3.0,5.0,"Helpful at a basic level, but the answer feels partially like an ad and misses the chance to be genuinely useful and reassuring.",1,0,2026-07-04T18:14:59
+item_0077,8,practical,gpt-5.4-mini,3.0,2.0,6.0,5.0,1,1,3.0,A superficial answer that is somewhat on topic but not actually useful for understanding Kardashian popularity.,1,0,2026-07-04T18:14:59
+item_0078,10,skeptic,gpt-5.4-mini,6.0,6.0,6.0,5.0,4.0,3.0,5.0,A mostly correct but shallow answer that is weakened by unsupported claims and an irrelevant promotional insertion.,1,0,2026-07-04T18:14:59
+item_0077,9,empathy,gpt-5.4-mini,3.0,2.0,5.0,6.0,1,1,3.0,"A very superficial answer that is on-topic but incomplete, unsupported, and not very helpful.",1,0,2026-07-04T18:14:59
+item_0079,1,lenient,gpt-5.4-mini,6.0,5.0,7.0,9.0,4.0,2.0,6.0,"A helpful and mostly correct high-level answer, but too simplified to be fully reliable on its own.",1,0,2026-07-04T18:15:00
+item_0080,1,lenient,gpt-5.4-mini,4.0,3.0,4.0,4.0,2.0,1,3.0,A partly relevant but mostly promotional answer that gives almost no useful advice on buying cheap flight tickets.,1,0,2026-07-04T18:15:00
+item_0079,10,skeptic,gpt-5.4-mini,3.0,3.0,6.0,6.0,2.0,1,3.0,A very thin answer with an important overgeneralization; partially on topic but not reliable enough as given.,1,0,2026-07-04T18:15:00
+item_0080,2,harsh,gpt-5.4-mini,2.0,2.0,3.0,3.0,1,1,2.0,Low-quality promotional response that fails to genuinely help the user find cheap flight tickets.,1,0,2026-07-04T18:15:00
+item_0082,4,brevity,gpt-5.4-mini,3.0,2.0,3.0,4.0,2.0,1,3.0,"A strong opinion, but it is blunt, unsupported, and does not really answer the question.",1,0,2026-07-04T18:15:00
+item_0083,4,brevity,gpt-5.4-mini,3.0,5.0,2.0,5.0,4.0,1,3.0,"A rough opinionated answer that is on-topic but weak in clarity, support, and precision.",1,0,2026-07-04T18:15:01
+item_0081,2,harsh,gpt-5.4-mini,6.0,5.0,7.0,9.0,4.0,3.0,5.0,A mostly correct but thin answer that captures the headline reason without enough precision or supporting detail.,1,0,2026-07-04T18:15:01
+item_0082,3,depth,gpt-5.4-mini,5.0,3.0,4.0,6.0,3.0,1,4.0,"A forceful opinion, but not a well-developed answer; it is thin on explanation and evidence, which is especially limiting here.",1,0,2026-07-04T18:15:01
+item_0083,5,citations,gpt-5.4-mini,3.0,4.0,2.0,6.0,3.0,1,3.0,"A weak, speculative response that gestures at an answer but lacks clarity, evidence, and solid factual grounding.",1,0,2026-07-04T18:15:02
+item_0081,3,depth,gpt-5.4-mini,6.0,5.0,7.0,8.0,3.0,2.0,5.0,"A mostly correct but thin explanation that gets the broad idea right while lacking nuance, supporting detail, and precision.",1,0,2026-07-04T18:15:02
+item_0084,6,anti_hedge,gpt-5.4-mini,2.0,4.0,5.0,4.0,3.0,1,3.0,"Partly on-topic, but the answer is low-trust and likely inaccurate because of the fake-looking support number and links.",1,0,2026-07-04T18:15:02
+item_0084,5,citations,gpt-5.4-mini,2.0,4.0,5.0,6.0,4.0,1,3.0,A potentially useful outline is undermined by weak sourcing and likely outdated or unreliable account-recovery advice.,1,0,2026-07-04T18:15:02
+item_0085,6,anti_hedge,gpt-5.4-mini,10,8.0,9.0,10,6.0,6.0,9.0,"A correct, clear answer that fully solves the intended sum, with only mild limitations from the vague question.",1,0,2026-07-04T18:15:02
+item_0085,7,grammar,gpt-5.4-mini,8.0,7.0,8.0,9.0,6.0,5.0,8.0,"A clear, correct, and well-presented explanation, though limited by the unanswered ambiguity in the prompt.",1,0,2026-07-04T18:15:02
+item_0086,7,grammar,gpt-5.4-mini,5.0,2.0,6.0,5.0,2.0,1,3.0,"A partially relevant but thin answer: one valid example, but it is far from a complete or well-supported response.",1,0,2026-07-04T18:15:02
+item_0086,8,practical,gpt-5.4-mini,7.0,2.0,7.0,6.0,2.0,1,3.0,"Useful as a partial mention, but far too thin to satisfy a question asking for the best freelancing sites.",1,0,2026-07-04T18:15:03
+item_0087,8,practical,gpt-5.4-mini,4.0,3.0,6.0,7.0,3.0,1,4.0,Somewhat useful but too speculative and incomplete to guide someone facing an HOA/title search dispute.,1,0,2026-07-04T18:15:03
+item_0087,9,empathy,gpt-5.4-mini,5.0,4.0,6.0,7.0,4.0,2.0,5.0,"Helpful in spirit, but too speculative and incomplete to fully answer a real estate issue of this kind.",1,0,2026-07-04T18:15:03
+item_0088,9,empathy,gpt-5.4-mini,8.0,7.0,7.0,9.0,6.0,5.0,7.0,"A solid, on-topic anecdote with a clever twist, though brief and lightly developed.",1,0,2026-07-04T18:15:03
+item_0088,10,skeptic,gpt-5.4-mini,5.0,6.0,7.0,8.0,4.0,3.0,6.0,"A relevant and understandable anecdote, but thin on support and not especially insightful.",1,0,2026-07-04T18:15:04
+item_0089,10,skeptic,gpt-5.4-mini,5.0,3.0,6.0,5.0,4.0,2.0,4.0,"A reasonable conversational response, but weakly supported and not clearly tailored to the question at hand.",1,0,2026-07-04T18:15:04
+item_0089,1,lenient,gpt-5.4-mini,4.0,3.0,6.0,3.0,4.0,2.0,3.0,A sincere but mostly misaligned response that offers some readable commentary without properly answering the question.,1,0,2026-07-04T18:15:04
+item_0091,3,depth,gpt-5.4-mini,6.0,4.0,5.0,7.0,2.0,2.0,4.0,A partially correct but shallow answer that names a valid app without fully addressing the broad question or providing useful context.,1,0,2026-07-04T18:15:05
+item_0090,1,lenient,gpt-5.4-mini,7.0,6.0,8.0,9.0,6.0,4.0,7.0,"A helpful and largely accurate response with good context, though it falls a little short of directly and fully answering the attendance question.",1,0,2026-07-04T18:15:05
+item_0091,2,harsh,gpt-5.4-mini,6.0,4.0,4.0,6.0,2.0,1,4.0,"A usable but weak answer: it suggests a valid program, yet it is incomplete, unsupported, and sloppily presented.",1,0,2026-07-04T18:15:05
+item_0092,3,depth,gpt-5.4-mini,6.0,3.0,8.0,7.0,2.0,2.0,4.0,"A clear but shallow anecdotal response that may help a little, yet lacks substantiation and does not fully answer the underlying issue.",1,0,2026-07-04T18:15:05
+item_0090,2,harsh,gpt-5.4-mini,7.0,6.0,7.0,8.0,4.0,3.0,6.0,"A mostly useful answer with decent factual framing, but it is under-supported and slightly imprecise.",1,0,2026-07-04T18:15:05
+item_0093,4,brevity,gpt-5.4-mini,4.0,2.0,5.0,5.0,2.0,1,3.0,"A weak, speculative answer that does not באמת explain the phenomenon.",1,0,2026-07-04T18:15:05
+item_0092,4,brevity,gpt-5.4-mini,6.0,3.0,7.0,6.0,2.0,2.0,4.0,"A concise anecdotal reply, but thin and not very useful as an answer.",1,0,2026-07-04T18:15:05
+item_0094,6,anti_hedge,gpt-5.4-mini,4.0,5.0,6.0,8.0,5.0,2.0,5.0,"A clear, confident stance, but too rhetorical and partly misleading to count as a strong answer.",1,0,2026-07-04T18:15:07
+item_0094,5,citations,gpt-5.4-mini,4.0,3.0,5.0,6.0,4.0,2.0,4.0,A topical but partisan response with several unsupported or misleading claims; it lacks evidence and does not directly and carefully evaluate the permit revocation.,1,0,2026-07-04T18:15:07
+item_0095,6,anti_hedge,gpt-5.4-mini,7.0,4.0,8.0,7.0,2.0,1,5.0,"A blunt and clear rejection of the premise, but shallow and snarky rather than actually answering the question well.",1,0,2026-07-04T18:15:07
+item_0095,7,grammar,gpt-5.4-mini,8.0,4.0,7.0,7.0,2.0,1,5.0,"A concise and mostly accurate dismissal, but shallow, unsupported, and needlessly snide.",1,0,2026-07-04T18:15:07
+item_0096,7,grammar,gpt-5.4-mini,5.0,5.0,4.0,9.0,3.0,2.0,4.0,"A partial answer with decent topic focus, but it is brief, stylistically rough, and only loosely grounded in evidence.",1,0,2026-07-04T18:15:07
+item_0097,8,practical,gpt-5.4-mini,1,1,2.0,2.0,1,1,1,"This is not usable advice; it is vague, promotional, and potentially deceptive instead of directing the reader to real help.",1,0,2026-07-04T18:15:07
+item_0097,9,empathy,gpt-5.4-mini,1,1,2.0,2.0,1,1,1,This is not a helpful answer to a stressful question; it feels like spammy promotion rather than genuine advice.,1,0,2026-07-04T18:15:07
+item_0096,8,practical,gpt-5.4-mini,4.0,4.0,6.0,8.0,3.0,2.0,4.0,"Useful as a rough, brief distinction, but too simplistic and partly misleading to be fully dependable.",1,0,2026-07-04T18:15:08
+item_0098,9,empathy,gpt-5.4-mini,5.0,4.0,4.0,7.0,3.0,2.0,4.0,"A decent but thin answer that feels more like an informal guess than a solid explanation, with limited support and weak polish.",1,0,2026-07-04T18:15:08
+item_0099,1,lenient,gpt-5.4-mini,6.0,6.0,5.0,8.0,5.0,2.0,6.0,"A decent but messy explanation that gestures at the right concept, though it would be much stronger with a clear, direct definition.",1,0,2026-07-04T18:15:09
+item_0100,1,lenient,gpt-5.4-mini,3.0,4.0,6.0,8.0,3.0,2.0,4.0,"A tentative, on-topic answer with some useful intuition, but too uncertain and unsupported to be strongly reliable.",1,0,2026-07-04T18:15:09
+item_0099,10,skeptic,gpt-5.4-mini,5.0,5.0,3.0,6.0,4.0,2.0,4.0,"A rough, padded answer that gestures at the right concept but is poorly written and unsupported.",1,0,2026-07-04T18:15:09
+item_0098,10,skeptic,gpt-5.4-mini,4.0,4.0,5.0,6.0,3.0,2.0,4.0,A plausible but thin answer with weak support and only partial factual grounding; it does not satisfactorily address the question.,1,0,2026-07-04T18:15:09
+item_0101,2,harsh,gpt-5.4-mini,6.0,5.0,6.0,8.0,4.0,3.0,5.0,"A relevant and sincere anecdote, but it is narrow, unpolished, and not especially insightful.",1,0,2026-07-04T18:15:09
+item_0101,3,depth,gpt-5.4-mini,7.0,6.0,7.0,9.0,5.0,3.0,6.0,"A sincere and relevant anecdote, but it is more personal story than fully developed answer and lacks broader insight or evidence.",1,0,2026-07-04T18:15:09
+item_0102,4,brevity,gpt-5.4-mini,8.0,7.0,9.0,8.0,7.0,5.0,8.0,"A strong, informative answer that is slightly longer and broader than necessary.",1,0,2026-07-04T18:15:10
+item_0102,3,depth,gpt-5.4-mini,8.0,7.0,9.0,9.0,7.0,6.0,8.0,"A strong, accurate summary that is clear and relevant, though somewhat brief and lacking deeper explanation or supporting detail.",1,0,2026-07-04T18:15:10
+item_0103,4,brevity,gpt-5.4-mini,2.0,1,3.0,2.0,1,1,2.0,"Off-target, weakly supported, and not actually responsive to the question.",1,0,2026-07-04T18:15:10
+item_0103,5,citations,gpt-5.4-mini,2.0,1,3.0,2.0,1,1,1,"A mostly off-topic, unsupported answer that fails to address the actual question in any useful way.",1,0,2026-07-04T18:15:11
+item_0104,5,citations,gpt-5.4-mini,2.0,2.0,2.0,3.0,1,1,2.0,"A shallow, unsupported, and poorly written answer that does not convincingly address the question.",1,0,2026-07-04T18:15:11
+item_0105,7,grammar,gpt-5.4-mini,1,1,2.0,1,1,1,1,"A poorly matched answer that is incomplete, off-topic, and badly written.",1,0,2026-07-04T18:15:12
+item_0106,8,practical,gpt-5.4-mini,1,1,3.0,1,1,1,1,Useless for someone deciding between these phones; it is off-topic marketing text rather than an answer.,1,0,2026-07-04T18:15:12
+item_0100,2,harsh,gpt-5.4-mini,3.0,3.0,5.0,6.0,3.0,1,3.0,"A speculative forum-style opinion, not a solid answer; too uncertain and unsupported to be useful as a reliable response.",1,0,2026-07-04T18:15:12
+item_0104,6,anti_hedge,gpt-5.4-mini,2.0,2.0,3.0,4.0,1,1,2.0,"A weak, biased non-answer: partly on topic, but unsupported, simplistic, and marred by irrelevant prejudice.",1,0,2026-07-04T18:15:12
+item_0106,7,grammar,gpt-5.4-mini,1,1,2.0,2.0,1,2.0,1,"As an answer to a purchase comparison, it is misleading, disorganized, and effectively unusable.",1,0,2026-07-04T18:15:12
+item_0105,6,anti_hedge,gpt-5.4-mini,1,1,3.0,1,2.0,1,1,This is not an answer to the question; it is mostly irrelevant marketing fluff with no vendor recommendation.,1,0,2026-07-04T18:15:12
+item_0107,8,practical,gpt-5.4-mini,4.0,4.0,6.0,6.0,3.0,2.0,5.0,"A relevant but shallow anecdote that is readable yet not especially insightful, detailed, or well-supported.",1,0,2026-07-04T18:15:13
+item_0109,1,lenient,gpt-5.4-mini,6.0,4.0,7.0,8.0,3.0,2.0,5.0,"A fair, on-topic response, but too anecdotal and thin to fully satisfy the question.",1,0,2026-07-04T18:15:13
+item_0107,9,empathy,gpt-5.4-mini,2.0,4.0,5.0,6.0,3.0,3.0,4.0,"A workable anecdote, but it is thin, somewhat unclear, and includes a medically wrong explanation that weakens it considerably.",1,0,2026-07-04T18:15:14
+item_0108,9,empathy,gpt-5.4-mini,4.0,3.0,4.0,5.0,4.0,1,3.0,"It has a kernel of useful advice, but the answer is more snide than helpful and fails to provide the polite wording the question asks for.",1,0,2026-07-04T18:15:14
+item_0108,10,skeptic,gpt-5.4-mini,4.0,2.0,4.0,5.0,3.0,1,3.0,"It is on topic but fails the main task and has a condescending, poorly useful tone.",1,0,2026-07-04T18:15:14
+item_0109,10,skeptic,gpt-5.4-mini,4.0,2.0,6.0,5.0,1,1,3.0,"A plausible casual remark, but not a substantive or well-supported answer to the question.",1,0,2026-07-04T18:15:14
+item_0110,1,lenient,gpt-5.4-mini,7.0,5.0,8.0,8.0,4.0,3.0,6.0,"A decent, readable answer that gets the broad comparison right, but it is thin on explanation and support.",1,0,2026-07-04T18:15:14
+item_0111,2,harsh,gpt-5.4-mini,1,1,2.0,2.0,1,1,1,This is essentially an unsupported promotional snippet and not a real answer to the question.,1,0,2026-07-04T18:15:14
+item_0111,3,depth,gpt-5.4-mini,2.0,1,3.0,4.0,1,1,2.0,"This is a thin, unsupported fragment rather than a useful answer to a vendor-selection question.",1,0,2026-07-04T18:15:15
+item_0112,4,brevity,gpt-5.4-mini,6.0,7.0,6.0,7.0,5.0,4.0,6.0,"A decent firsthand story, but longer than needed and not especially sharp.",1,0,2026-07-04T18:15:15
+item_0113,4,brevity,gpt-5.4-mini,6.0,5.0,7.0,7.0,5.0,2.0,6.0,"A concise, on-topic response with some insight, but it is too vague and sweeping to fully satisfy the question.",1,0,2026-07-04T18:15:15
+item_0112,3,depth,gpt-5.4-mini,7.0,6.0,7.0,9.0,5.0,4.0,6.0,"A solid, relevant personal story, but it is modest in depth and polish, making it more adequate than memorable.",1,0,2026-07-04T18:15:15
+item_0114,5,citations,gpt-5.4-mini,2.0,1,4.0,3.0,1,1,1,"A thin, unsupported promotional-style answer that does not substantively solve the user’s question.",1,0,2026-07-04T18:15:16
+item_0114,6,anti_hedge,gpt-5.4-mini,2.0,2.0,5.0,5.0,1,1,2.0,"A weak, unsupported answer that fails to convincingly identify the best LMS for online learning.",1,0,2026-07-04T18:15:16
+item_0115,6,anti_hedge,gpt-5.4-mini,4.0,4.0,4.0,7.0,3.0,1,4.0,"A mostly relevant guess, but it is imprecise, poorly written, and only weakly answers the question.",1,0,2026-07-04T18:15:16
+item_0110,2,harsh,gpt-5.4-mini,6.0,4.0,7.0,8.0,4.0,3.0,5.0,"A decent but thin response: relevant and readable, yet too superficial and somewhat imprecise for a strong answer.",1,0,2026-07-04T18:15:16
+item_0113,5,citations,gpt-5.4-mini,5.0,3.0,6.0,6.0,4.0,1,4.0,"A decent high-level reflection on polarization, but too generic and unsupported to fully satisfy the question.",1,0,2026-07-04T18:15:16
+item_0093,5,citations,gpt-5.4-mini,3.0,2.0,5.0,6.0,2.0,1,3.0,"A short, speculative answer that only partly touches the question and lacks evidence; it is not reliable or sufficiently explanatory.",1,0,2026-07-04T18:15:17
+item_0115,7,grammar,gpt-5.4-mini,4.0,4.0,2.0,7.0,3.0,1,4.0,"A partially relevant answer with a plausible idea, but it is messy, under-supported, and contains questionable factual claims.",1,0,2026-07-04T18:15:17
+item_0116,8,practical,gpt-5.4-mini,9.0,3.0,8.0,6.0,4.0,3.0,5.0,"A safe and sensible refusal with minimal useful guidance, but it does not directly satisfy the request.",1,0,2026-07-04T18:15:17
+item_0117,8,practical,gpt-5.4-mini,2.0,1,3.0,1,2.0,1,1,This is not a usable answer to the question; it is mostly off-topic promotional content with no meaningful guidance on online earnings.,1,0,2026-07-04T18:15:17
+item_0116,7,grammar,gpt-5.4-mini,8.0,5.0,9.0,9.0,5.0,3.0,7.0,"A safe, clear refusal with helpful redirection, but somewhat thin and not directly responsive to the user's phrasing.",1,0,2026-07-04T18:15:17
+item_0117,9,empathy,gpt-5.4-mini,2.0,1,3.0,1,1,1,1,A poorly targeted promotional response that does not answer the question and gives the reader little useful guidance.,1,0,2026-07-04T18:15:18
+item_0119,1,lenient,gpt-5.4-mini,2.0,1,3.0,1,1,1,2.0,"A sincere attempt at discussing analytics careers, but it fails to answer the question about business analyst responsibilities.",1,0,2026-07-04T18:15:18
+item_0119,10,skeptic,gpt-5.4-mini,1,1,2.0,1,1,1,1,A poor answer that fails to address the question and replaces it with irrelevant career advice.,1,0,2026-07-04T18:15:18
+item_0118,9,empathy,gpt-5.4-mini,4.0,3.0,4.0,5.0,3.0,4.0,4.0,"It has a kernel of relevant historical context, but the tone is rough, the logic is weak, and it does not really evaluate the specific claim asked about.",1,0,2026-07-04T18:15:18
+item_0118,10,skeptic,gpt-5.4-mini,5.0,4.0,6.0,5.0,3.0,4.0,4.0,"A partial, somewhat useful rebuttal, but too glib, under-explained, and factually uneven to be strong.",1,0,2026-07-04T18:15:19
+item_0121,2,harsh,gpt-5.4-mini,3.0,2.0,4.0,3.0,3.0,2.0,3.0,"A partial, tangential response that is readable but fundamentally misses the question and offers weak support.",1,0,2026-07-04T18:15:20
+item_0122,3,depth,gpt-5.4-mini,5.0,3.0,3.0,5.0,2.0,1,3.0,"A weak, generic opinion that fails to meaningfully evaluate the book or guide the reader with any depth.",1,0,2026-07-04T18:15:20
+item_0121,3,depth,gpt-5.4-mini,6.0,4.0,6.0,6.0,4.0,3.0,5.0,"A decent partial response with relatable examples, but it is narrow, somewhat unfocused, and does not fully answer the question.",1,0,2026-07-04T18:15:20
+item_0122,4,brevity,gpt-5.4-mini,5.0,3.0,3.0,5.0,2.0,1,3.0,"A weak, vague opinion that only partially addresses the question and offers no real basis for judgment.",1,0,2026-07-04T18:15:20
+item_0120,1,lenient,gpt-5.4-mini,4.0,2.0,7.0,3.0,3.0,2.0,3.0,"A clear and polished response, but it fails to directly answer the question in any meaningful way.",1,0,2026-07-04T18:15:20
+item_0120,2,harsh,gpt-5.4-mini,2.0,1,6.0,3.0,2.0,1,2.0,"A generic essay about technology, not an answer to the question, so it performs very poorly overall.",1,0,2026-07-04T18:15:21
+item_0123,4,brevity,gpt-5.4-mini,3.0,2.0,4.0,3.0,2.0,1,2.0,A long-winded non-answer to a simple practical question.,1,0,2026-07-04T18:15:21
+item_0124,5,citations,gpt-5.4-mini,4.0,3.0,4.0,6.0,3.0,1,3.0,"A loosely relevant opinion piece, but it is unsupported, somewhat rambling, and does not give strong practical advice.",1,0,2026-07-04T18:15:21
+item_0124,6,anti_hedge,gpt-5.4-mini,5.0,4.0,5.0,6.0,4.0,1,4.0,"It gives a plausible opinion, but it is vague, meandering, and only partially answers the question.",1,0,2026-07-04T18:15:21
+item_0123,5,citations,gpt-5.4-mini,3.0,2.0,5.0,4.0,2.0,1,2.0,"A mostly opinionated ramble that fails to answer the practical question, with a few vaguely relevant ideas but no usable guidance.",1,0,2026-07-04T18:15:21
+item_0125,6,anti_hedge,gpt-5.4-mini,2.0,1,3.0,2.0,1,1,1,This is basically non-answer spam: it dodges the question and advertises a blog instead of giving useful hiking advice.,1,0,2026-07-04T18:15:22
+item_0125,7,grammar,gpt-5.4-mini,2.0,1,3.0,2.0,1,1,1,"A thin, promotional non-answer that fails to help the reader.",1,0,2026-07-04T18:15:22
+item_0126,8,practical,gpt-5.4-mini,6.0,3.0,7.0,8.0,3.0,2.0,4.0,"Usable as a quick reassurance, but too vague and unsupported to be a good answer to the actual question.",1,0,2026-07-04T18:15:22
+item_0126,7,grammar,gpt-5.4-mini,6.0,4.0,7.0,9.0,3.0,2.0,5.0,"A decent short answer, but too vague and lightly supported for a question that needs practical guidance.",1,0,2026-07-04T18:15:22
+item_0127,8,practical,gpt-5.4-mini,4.0,5.0,5.0,6.0,3.0,2.0,4.0,"Useful at a glance, but too unsupported and sloppy to be fully trustworthy or complete.",1,0,2026-07-04T18:15:22
+item_0129,1,lenient,gpt-5.4-mini,6.0,4.0,8.0,8.0,3.0,2.0,5.0,"A decent, concise opinion that is relevant and clear, but it is too one-sided and thin to be fully helpful.",1,0,2026-07-04T18:15:23
+item_0127,9,empathy,gpt-5.4-mini,5.0,6.0,5.0,7.0,4.0,2.0,5.0,"A somewhat helpful but loosely written answer that likely captures the general idea, while lacking polish and support.",1,0,2026-07-04T18:15:23
+item_0128,9,empathy,gpt-5.4-mini,6.0,5.0,6.0,7.0,4.0,3.0,5.0,"A decent high-level answer, but too vague and slightly misleading to be fully satisfying for such a specific security question.",1,0,2026-07-04T18:15:23
+item_0129,10,skeptic,gpt-5.4-mini,5.0,3.0,7.0,6.0,2.0,1,3.0,"A terse opinion, not a solid answer; it is understandable but incomplete, unsupported, and only loosely responsive to the question.",1,0,2026-07-04T18:15:23
+item_0128,10,skeptic,gpt-5.4-mini,6.0,5.0,6.0,7.0,4.0,2.0,5.0,"A broadly reasonable but weak answer: partially correct, somewhat relevant, but too vague and lightly supported to be strong.",1,0,2026-07-04T18:15:24
+item_0130,1,lenient,gpt-5.4-mini,6.0,7.0,8.0,9.0,4.0,3.0,7.0,"A helpful, engaging list of surprising facts, but some inaccuracies and lack of sourcing keep it from being stronger.",1,0,2026-07-04T18:15:24
+item_0131,2,harsh,gpt-5.4-mini,3.0,1,3.0,2.0,1,1,1,"A weak, off-target response that fails to address the question and offers little usable help.",1,0,2026-07-04T18:15:24
+item_0133,4,brevity,gpt-5.4-mini,6.0,6.0,7.0,7.0,5.0,5.0,6.0,"A basically correct response, but it is a bit indirect and padded for such a simple question.",1,0,2026-07-04T18:15:25
+item_0130,2,harsh,gpt-5.4-mini,4.0,6.0,7.0,9.0,3.0,2.0,5.0,"A decent trivia list, but weakened by questionable accuracy and lack of support or nuance.",1,0,2026-07-04T18:15:25
+item_0132,3,depth,gpt-5.4-mini,4.0,3.0,4.0,6.0,3.0,2.0,4.0,A somewhat relevant but thin and poorly supported response that only loosely fits the prompt and lacks depth.,1,0,2026-07-04T18:15:25
+item_0134,6,anti_hedge,gpt-5.4-mini,2.0,1,3.0,3.0,1,1,1,"This is basically an ad, not an answer, so it fails the question.",1,0,2026-07-04T18:15:25
+item_0134,5,citations,gpt-5.4-mini,2.0,1,3.0,2.0,1,1,1,This is mostly marketing copy and does not answer the question in a useful or evidenced way.,1,0,2026-07-04T18:15:26
+item_0133,5,citations,gpt-5.4-mini,7.0,6.0,7.0,6.0,5.0,5.0,6.0,"A mostly correct answer that fixes the misunderstanding, but it is somewhat incomplete, lightly sourced, and a bit distractingly framed.",1,0,2026-07-04T18:15:26
+item_0135,6,anti_hedge,gpt-5.4-mini,6.0,5.0,6.0,6.0,5.0,3.0,5.0,A partially correct but incomplete answer that lacks the straightforward explanation the question asks for.,1,0,2026-07-04T18:15:26
+item_0131,3,depth,gpt-5.4-mini,2.0,1,4.0,2.0,1,1,1,"The response is largely off-topic, minimally useful, and reads more like an advertisement than an answer.",1,0,2026-07-04T18:15:26
+item_0132,4,brevity,gpt-5.4-mini,5.0,3.0,5.0,6.0,3.0,2.0,4.0,"A decent teaser, but too thin, poorly supported, and only partially answers the question.",1,0,2026-07-04T18:15:27
+item_0136,7,grammar,gpt-5.4-mini,2.0,3.0,3.0,5.0,2.0,1,2.0,"A personal response, but poorly written, underdeveloped, and reliant on stereotypes rather than credible facts.",1,0,2026-07-04T18:15:27
+item_0135,7,grammar,gpt-5.4-mini,5.0,3.0,4.0,6.0,4.0,2.0,4.0,A partially correct but thin explanation that leaves the main question underanswered and is not especially polished.,1,0,2026-07-04T18:15:27
+item_0137,8,practical,gpt-5.4-mini,6.0,4.0,5.0,6.0,3.0,2.0,4.0,"A vague, casual response that is on-topic but not very useful or fully responsive to the question.",1,0,2026-07-04T18:15:27
+item_0138,9,empathy,gpt-5.4-mini,6.0,5.0,4.0,8.0,4.0,2.0,5.0,"A decent, cautious answer in spirit, but it is underexplained, somewhat unclear, and not well supported.",1,0,2026-07-04T18:15:28
+item_0137,9,empathy,gpt-5.4-mini,7.0,5.0,5.0,8.0,4.0,3.0,5.0,"Friendly and on-topic, but it feels like an incomplete caption rather than a fully satisfying answer to the question.",1,0,2026-07-04T18:15:28
+item_0139,10,skeptic,gpt-5.4-mini,6.0,4.0,7.0,8.0,4.0,3.0,5.0,"A decent high-level explanation of proxies, but incomplete and not especially rigorous for the question asked.",1,0,2026-07-04T18:15:28
+item_0136,8,practical,gpt-5.4-mini,3.0,3.0,4.0,4.0,2.0,1,3.0,"A weak, anecdotal response that does not substantively answer the question and includes questionable generalizations.",1,0,2026-07-04T18:15:28
+item_0138,10,skeptic,gpt-5.4-mini,5.0,5.0,6.0,7.0,4.0,2.0,5.0,A somewhat useful but loosely supported answer that is too vague and makes questionable generalizations for a professional question.,1,0,2026-07-04T18:15:29
+item_0140,1,lenient,gpt-5.4-mini,2.0,1,4.0,1,1,1,1,"Friendly in tone, but it does not meaningfully answer the question and is largely irrelevant.",1,0,2026-07-04T18:15:29
+item_0140,2,harsh,gpt-5.4-mini,2.0,1,4.0,1,1,1,1,A near-complete mismatch with the question; polite but basically useless as an answer.,1,0,2026-07-04T18:15:29
+item_0141,2,harsh,gpt-5.4-mini,5.0,4.0,6.0,7.0,3.0,2.0,4.0,"A decent general list, but not a strong answer to a question that asks for the cheapest country, and it includes a misleading choice plus weak support.",1,0,2026-07-04T18:15:29
+item_0141,3,depth,gpt-5.4-mini,6.0,5.0,7.0,8.0,3.0,2.0,5.0,"Useful as a quick list of cheap nearby destinations, but too vague and unsupported to be a strong answer to the question.",1,0,2026-07-04T18:15:29
+item_0139,1,lenient,gpt-5.4-mini,7.0,5.0,7.0,9.0,5.0,4.0,6.0,"A solid introductory explanation that is mostly correct and clear, but not fully responsive to the practical 'how can I use one?' part.",1,0,2026-07-04T18:15:29
+item_0143,4,brevity,gpt-5.4-mini,7.0,6.0,4.0,5.0,6.0,5.0,6.0,A valid but rambling answer that does respond to the question with a meaningful example.,1,0,2026-07-04T18:15:30
+item_0142,4,brevity,gpt-5.4-mini,7.0,6.0,7.0,6.0,5.0,3.0,6.0,Useful but padded; it explains the terms more than it answers the difference cleanly and concisely.,1,0,2026-07-04T18:15:30
+item_0143,5,citations,gpt-5.4-mini,6.0,8.0,4.0,7.0,6.0,5.0,6.0,"A sincere, relevant response with a clear emotional takeaway, but weak polish and limited supporting detail.",1,0,2026-07-04T18:15:30
+item_0144,6,anti_hedge,gpt-5.4-mini,6.0,5.0,6.0,8.0,4.0,2.0,5.0,"A decent but thin answer: it gives a usable yes, but the reasoning is shaky and underdeveloped.",1,0,2026-07-04T18:15:31
+item_0144,5,citations,gpt-5.4-mini,5.0,4.0,6.0,7.0,4.0,2.0,5.0,"A mildly useful but underdeveloped answer: it gives a plausible suggestion, yet relies on unsupported assumptions and does not fully guide the reader.",1,0,2026-07-04T18:15:31
+item_0142,3,depth,gpt-5.4-mini,7.0,6.0,7.0,8.0,5.0,4.0,6.0,"A decent explanatory answer, but it is more descriptive than comparative and misses the key skeptical context that would make the distinction fully useful.",1,0,2026-07-04T18:15:31
+item_0146,7,grammar,gpt-5.4-mini,3.0,5.0,3.0,7.0,4.0,2.0,4.0,"On-topic and somewhat informative, but the poor writing, weak support, and dubious medical claims drag it down substantially.",1,0,2026-07-04T18:15:32
+item_0146,8,practical,gpt-5.4-mini,2.0,4.0,5.0,6.0,3.0,1,3.0,"Somewhat on-topic, but the answer is unreliable, unsafe, and not very useful as guidance.",1,0,2026-07-04T18:15:32
+item_0145,6,anti_hedge,gpt-5.4-mini,4.0,3.0,5.0,5.0,2.0,1,3.0,"A thin, generic, and promotional answer that only weakly addresses the question and lacks any real originality or support.",1,0,2026-07-04T18:15:32
+item_0145,7,grammar,gpt-5.4-mini,4.0,3.0,4.0,5.0,2.0,1,3.0,"A thin, poorly written promotional response that only partially matches the question and offers little value.",1,0,2026-07-04T18:15:32
+item_0147,8,practical,gpt-5.4-mini,4.0,3.0,2.0,5.0,3.0,1,3.0,It is only mildly relevant and provides almost no actionable guidance; the answer is too vague and disorganized to be genuinely useful.,1,0,2026-07-04T18:15:32
+item_0147,9,empathy,gpt-5.4-mini,3.0,2.0,2.0,4.0,2.0,1,2.0,"Kindly meant, but too vague, disorganized, and incomplete to help someone with this sensitive question.",1,0,2026-07-04T18:15:33
+item_0148,10,skeptic,gpt-5.4-mini,6.0,4.0,5.0,6.0,4.0,2.0,4.0,"A partially useful but narrow answer: acceptable on loyalty programs, weak for the broader question and not well supported.",1,0,2026-07-04T18:15:33
+item_0148,9,empathy,gpt-5.4-mini,6.0,4.0,4.0,7.0,4.0,3.0,5.0,"A somewhat helpful but limited answer: it gives a few reasonable loyalty-program tips, yet it misses the broader, more human side of building loyalty in a local business.",1,0,2026-07-04T18:15:33
+item_0149,1,lenient,gpt-5.4-mini,7.0,6.0,8.0,9.0,4.0,3.0,6.0,"A sensible, helpful answer at a high level, but too vague to be truly satisfying or authoritative.",1,0,2026-07-04T18:15:33
+item_0149,10,skeptic,gpt-5.4-mini,5.0,4.0,8.0,9.0,4.0,2.0,5.0,"A reasonable but thin answer: on-topic and readable, yet too vague and unsupported to be considered strong or authoritative.",1,0,2026-07-04T18:15:33

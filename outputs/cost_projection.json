@@ -1,0 +1,30 @@
+{
+  "assumed_input_tokens": 1000,
+  "assumed_output_tokens": 150,
+  "assumed_repair_rate": 0.03,
+  "n_items": 500,
+  "versions_per_model": 4,
+  "human_panel": {
+    "calls": 1000,
+    "cost_usd": 0.5499999999999999
+  },
+  "prompt_eng_full_data": {
+    "calls": 8000,
+    "cost_usd": 12.649999999999999
+  },
+  "json_repair": {
+    "calls": 270,
+    "cost_usd": 0.4725
+  },
+  "total_calls": 9270,
+  "total_cost_usd": 13.6725,
+  "judge_cost_per_model_all_versions": {
+    "gpt-5.2": 5.5,
+    "claude-haiku-4.5": 3.4999999999999996,
+    "gemini-2.5-flash": 1.3499999999999999,
+    "perplexity-sonar": 2.3
+  },
+  "judge_cost_per_item_per_version_blended": 0.00158125,
+  "judge_per_1k_items_one_version_blended": 1.58125,
+  "judge_per_1m_items_one_version_blended": 1581.25
+}

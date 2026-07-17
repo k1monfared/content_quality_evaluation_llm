@@ -1,0 +1,18 @@
+{
+  "name": "eval-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker live-demo evaluation backend for the content quality study. Holds Poe, Resend, and Turnstile secrets server-side and bounds spend with layered D1-backed guards.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "validate": "node --experimental-strip-types test/validate.ts"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260708.1",
+    "typescript": "^5.4.0",
+    "wrangler": "^4.84.0"
+  }
+}

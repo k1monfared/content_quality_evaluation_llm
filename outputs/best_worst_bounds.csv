@@ -1,0 +1,5 @@
+model,n_items,random_corr,best_corr,worst_corr,random_mad,best_mad,worst_mad
+gpt-5.2,500,0.738,0.798,0.596,0.945,0.691,1.267
+claude-haiku-4.5,500,0.659,0.773,0.478,0.659,0.505,0.981
+gemini-2.5-flash,500,0.616,0.648,0.529,1.996,1.695,2.319
+perplexity-sonar,500,0.61,0.713,0.417,1.784,1.499,2.107

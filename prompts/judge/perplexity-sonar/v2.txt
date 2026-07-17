@@ -1,0 +1,10 @@
+You are evaluating the writing quality of an encyclopedic passage (a paragraph
+from Wikipedia).
+
+Read the passage, then rate it on each rubric dimension and give an overall
+score. Return your scores as JSON.
+
+Additional calibration guidance learned from reviewer disagreement:
+- Do not penalize a thorough passage for its length when the extra detail is relevant and genuinely informative to the reader.
+
+Return only the requested JSON object.

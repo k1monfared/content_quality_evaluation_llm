@@ -1,0 +1,50 @@
+{
+  "full_rubric": {
+    "dims": [
+      "clarity",
+      "neutrality",
+      "verifiability",
+      "coverage",
+      "structure",
+      "readability",
+      "informativeness"
+    ],
+    "flat_corr_with_overall": 0.8633,
+    "fitted_corr_with_overall": 0.8868,
+    "fitted_intercept": -0.5033,
+    "fitted_weights": {
+      "clarity": 0.148,
+      "neutrality": 0.0467,
+      "verifiability": 0.192,
+      "coverage": 0.1493,
+      "structure": 0.1559,
+      "readability": 0.0807,
+      "informativeness": 0.2716
+    },
+    "flat_inter_rater": 0.8426
+  },
+  "refined_rubric": {
+    "dims": [
+      "neutrality",
+      "verifiability",
+      "coverage",
+      "readability"
+    ],
+    "dropped": [
+      "clarity",
+      "structure",
+      "informativeness"
+    ],
+    "flat_corr_with_overall": 0.7943,
+    "fitted_corr_with_overall": 0.8504,
+    "fitted_intercept": -0.106,
+    "fitted_weights": {
+      "neutrality": 0.0495,
+      "verifiability": 0.277,
+      "coverage": 0.4139,
+      "readability": 0.3138
+    },
+    "flat_inter_rater": 0.8368
+  },
+  "direct_overall_inter_rater": 0.6862
+}

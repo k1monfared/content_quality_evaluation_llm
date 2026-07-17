@@ -1,0 +1,6 @@
+{
+  "gpt-5.2": "v1",
+  "claude-haiku-4.5": "v3",
+  "gemini-2.5-flash": "v3",
+  "perplexity-sonar": "v2"
+}

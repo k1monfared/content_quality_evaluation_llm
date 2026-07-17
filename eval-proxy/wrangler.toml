@@ -1,0 +1,50 @@
+name = "eval-proxy"
+main = "src/worker.ts"
+compatibility_date = "2025-01-01"
+
+# --------------------------------------------------------------------------
+# Non-secret config. Edit these for your deployment, or override with --var on
+# the wrangler deploy command. SECRETS are NOT set here. Set them with
+# `wrangler secret put` (see README.md):
+#   wrangler secret put POE_API_KEY
+#   wrangler secret put RESEND_API_KEY
+#   wrangler secret put TURNSTILE_SECRET_KEY
+# --------------------------------------------------------------------------
+[vars]
+SITE_NAME = "Content Quality Evaluation"
+# Sender address, MUST be on a domain you verified in Resend.
+FROM_ADDR = "Content Quality Evaluation <content-quality@k1monfared.com>"
+# Comma separated origins allowed to call the endpoints. Leave empty to allow
+# any origin (not recommended for production).
+ALLOWED_ORIGINS = "https://k1monfared.github.io, http://localhost:8000"
+# Public Turnstile site key. Safe to expose. Also paste it into the frontend.
+TURNSTILE_SITE_KEY = "0x4AAAAAADzXlR9ZdrOBylK_"
+# Your support or donation page, shown when the monthly cost cap is reached.
+SUPPORT_URL = "https://k1monfared.github.io/sponsor.html"
+
+# Optional limit overrides. If unset, the defaults in src/rubric-config.ts
+# (LIMIT_DEFAULTS) apply. Uncomment and tune as needed.
+# MAX_INPUT_CHARS = "8000"
+# PER_TOKEN_DAILY_QUOTA = "10"
+# GLOBAL_DAILY_CALL_CAP = "200"
+# EVAL_IP_DAILY_CAP = "3"
+# MONTHLY_COST_CAP_USD = "5.00"
+# IP_DAILY_REQUEST_CAP = "20"
+# EMAIL_COOLDOWN_HOURS = "24"
+# DEFAULT_TOKEN_QUOTA_PER_DAY = "10"
+
+# Endpoint base overrides. Leave unset in production (defaults hit the real
+# services). Local validation points these at a stub server so no network is
+# used and no cost is incurred. See test/validate.ts.
+# TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+# RESEND_API_BASE = "https://api.resend.com"
+# POE_BASE_URL = "https://api.poe.com/v1"
+
+# D1 database holding access tokens, counters, and rate-limit rows.
+# Create one with: npx wrangler d1 create eval-proxy-db
+# Apply the schema: npx wrangler d1 execute eval-proxy-db --remote --file=./schema.sql
+# Then paste the printed database_id below.
+[[d1_databases]]
+binding = "EVAL_DB"
+database_name = "eval-proxy-db"
+database_id = "f8494eed-3838-46f7-8691-c30b34f21428"

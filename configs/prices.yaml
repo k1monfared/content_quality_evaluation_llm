@@ -1,0 +1,35 @@
+# Price table used only for cost bookkeeping and at-scale projections.
+#
+# Units: US dollars per 1,000,000 tokens, split into input (prompt) and
+# output (completion).
+#
+# IMPORTANT ASSUMPTION: Poe bills API usage in its own compute points, not in
+# per-token dollars. The values below are representative public list prices for
+# each underlying model, used purely for planning and comparison. They are
+# configurable: edit this file to match whatever pricing you want to reason
+# about, and every cost number downstream updates automatically.
+#
+# Last reviewed against public provider pricing pages: 2026-07.
+
+default:
+  input: 1.00
+  output: 3.00
+
+models:
+  # Judge models used in this run (one per provider, cost-fit tiers).
+  gpt-5.2:
+    input: 1.25
+    output: 10.00
+  claude-haiku-4.5:
+    input: 1.00
+    output: 5.00
+  gemini-2.5-flash:
+    input: 0.30
+    output: 2.50
+  perplexity-sonar:
+    input: 1.00
+    output: 1.00
+  # Low-cost model that plays the simulated human personas.
+  gpt-5.4-mini:
+    input: 0.25
+    output: 2.00

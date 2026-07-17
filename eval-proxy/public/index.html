@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Content Quality Evaluation Demo</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel2: #1f232c;
+    --ink: #e8eaed;
+    --muted: #9aa3b2;
+    --line: #2a2f3a;
+    --accent: #4c8dff;
+    --good: #37b24d;
+    --bad: #e03131;
+    --warn: #f08c00;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 80px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .lede { color: var(--muted); margin: 0 0 28px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+    margin: 0 0 22px;
+  }
+  .card h2 { font-size: 17px; margin: 0 0 4px; }
+  .card p.hint { color: var(--muted); margin: 0 0 16px; font-size: 13.5px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+  a.forget { float: right; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
+  a.forget:hover { text-decoration: underline; }
+  input[type="email"], input[type="text"], textarea, select {
+    width: 100%;
+    background: var(--panel2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    outline: none;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { min-height: 160px; resize: vertical; font-family: inherit; }
+  .field { margin: 0 0 14px; }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .row .field { flex: 1 1 220px; }
+  button {
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.55; cursor: not-allowed; }
+  .cf { margin: 6px 0 14px; }
+  .status { font-size: 13.5px; margin: 12px 0 0; min-height: 18px; }
+  .status.err { color: var(--bad); }
+  .status.ok { color: var(--good); }
+  .status.info { color: var(--muted); }
+
+  .result { margin-top: 20px; display: none; }
+  .badge {
+    display: inline-block;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .badge.good { background: rgba(55,178,77,0.15); color: var(--good); border: 1px solid rgba(55,178,77,0.4); }
+  .badge.bad { background: rgba(224,49,49,0.15); color: var(--bad); border: 1px solid rgba(224,49,49,0.4); }
+  .scores { display: flex; gap: 22px; margin: 16px 0; flex-wrap: wrap; }
+  .scorebox { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
+  .scorebox .n { font-size: 26px; font-weight: 700; }
+  .scorebox .k { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .reasoning { background: var(--panel2); border-left: 3px solid var(--accent); border-radius: 6px; padding: 12px 14px; margin: 12px 0; color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.dim { white-space: nowrap; font-weight: 600; }
+  td.sc { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; }
+  td.rs { color: var(--muted); font-size: 13.5px; }
+  .capped { background: rgba(240,140,0,0.1); border: 1px solid rgba(240,140,0,0.4); border-radius: 10px; padding: 18px; }
+  .capped p { margin: 0 0 14px; }
+  .capped a.support {
+    display: inline-block; background: var(--warn); color: #1a1a1a; font-weight: 700;
+    padding: 10px 18px; border-radius: 8px; text-decoration: none;
+  }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 12px; }
+  code { background: var(--panel2); padding: 1px 5px; border-radius: 4px; }
+  a { color: var(--accent); }
+  .prompt-toggle { background: var(--panel2); color: var(--ink); border: 1px solid var(--line);
+    font: inherit; font-weight: 600; padding: 9px 14px; border-radius: 8px; cursor: pointer;
+    width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+  .prompt-toggle .caret { transition: transform 0.15s ease; color: var(--muted); }
+  .prompt-toggle.open .caret { transform: rotate(90deg); }
+  .prompt-body { display: none; margin-top: 10px; }
+  .prompt-body.open { display: block; }
+  .prompt-body h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--muted); margin: 14px 0 6px; }
+  .prompt-meta { color: var(--muted); font-size: 12.5px; margin: 0 0 10px; }
+  pre.prompt { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px 14px; margin: 0; white-space: pre-wrap; word-break: break-word;
+    font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ink);
+    max-height: 320px; overflow: auto; }
+  .disclosure { background: var(--panel2); border: 1px solid var(--line);
+    border-left: 3px solid var(--warn); border-radius: 8px; padding: 12px 14px;
+    margin: 14px 0 0; color: var(--muted); font-size: 13px; }
+  .charts { margin-top: 20px; }
+  .charts h3 { font-size: 13.5px; margin: 0 0 12px; color: var(--ink); }
+  .chart-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .chart { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .chart .ct { font-size: 12.5px; font-weight: 700; text-transform: capitalize; margin: 0 0 2px; }
+  .chart .cp { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+  .chart .cp b { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .chart svg { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Content Quality Evaluation Demo</h1>
+  <p class="lede">
+    Paste an encyclopedic passage, pick a judge model, and get a rubric score.
+    Request a free access token by email first.
+  </p>
+
+  <!-- ================= Part A: request access ================= -->
+  <section class="card">
+    <h2>1. Request an access token</h2>
+    <p class="hint">
+      We email you a token with a small daily quota and a monthly cost cap.
+      No token is shown here, check your inbox.
+    </p>
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+    </div>
+    <div class="cf" id="ts-access"></div>
+    <button id="btn-access">Email me a token</button>
+    <p class="status info" id="status-access"></p>
+  </section>
+
+  <!-- ================= Part B: evaluate ================= -->
+  <section class="card">
+    <h2>2. Evaluate a passage</h2>
+    <p class="hint">Paste the content, choose one model, and enter the token from your email.</p>
+    <div class="field">
+      <label for="content">Content to evaluate</label>
+      <textarea id="content" placeholder="Paste an encyclopedic paragraph here."></textarea>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="model">Judge model</label>
+        <select id="model">
+          <option value="gpt-5.2">gpt-5.2</option>
+          <option value="claude-haiku-4.5">claude-haiku-4.5</option>
+          <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+          <option value="perplexity-sonar">perplexity-sonar</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="token">
+          Access token
+          <a href="#" id="forget-token" class="forget" hidden>forget token</a>
+        </label>
+        <input type="text" id="token" placeholder="64 hex characters from your email" autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+    <div class="field">
+      <button type="button" class="prompt-toggle" id="prompt-toggle" aria-expanded="false">
+        <span>View the prompt</span><span class="caret">&#9656;</span>
+      </button>
+      <div class="prompt-body" id="prompt-body">
+        <p class="prompt-meta" id="prompt-meta"></p>
+        <h3>System prompt (varies by model)</h3>
+        <pre class="prompt" id="prompt-system"></pre>
+        <h3>User message scaffold (same for every model)</h3>
+        <pre class="prompt" id="prompt-user"></pre>
+      </div>
+    </div>
+    <div class="disclosure">
+      <p style="margin:0 0 8px;"><strong>Privacy note.</strong></p>
+      <p style="margin:0 0 8px;"><strong>Stored privately:</strong> your email, the passage
+      text, the chosen judge model, and the returned scores are stored in the operator's own
+      private database. They are used only to run this demo, to return a cached result if the
+      same passage and model were evaluated before, and to enforce the cost limits. They are
+      not shared or made public.</p>
+      <p style="margin:0;"><strong>Sent to the model provider:</strong> to produce a score,
+      the passage text and the judge prompt are sent to the selected model's provider through
+      Poe. Poe receives the passage and the prompt but nothing about you, not your email and
+      not your identity.</p>
+    </div>
+    <div class="cf" id="ts-eval"></div>
+    <button id="btn-eval">Evaluate</button>
+    <p class="status info" id="status-eval"></p>
+
+    <div class="result" id="result"></div>
+  </section>
+
+  <p class="meta">
+    This demo is separate from the study pipeline. Scores come from a live judge
+    model call through a rate-limited proxy. The rubric, per-model prompts,
+    composite weights, and threshold are the finalized study values. The good or
+    bad decision is driven by the direct overall score at the study threshold of
+    6, and the composite is the study's refined fitted composite over neutrality,
+    verifiability, coverage, and readability.
+  </p>
+</div>
+
+<script>
+// ===========================================================================
+// CONFIG. Fill these in after you deploy the Worker and create a Turnstile site.
+// ===========================================================================
+const WORKER_BASE_URL = "https://eval-proxy.usraelwar.workers.dev"; // no trailing slash
+const TURNSTILE_SITE_KEY = "0x4AAAAAADzXlR9ZdrOBylK_";
+// ===========================================================================
+
+// ---------------------------------------------------------------------------
+// Per-model judge prompts, embedded from eval-proxy/src/rubric-config.ts. These
+// are the study's selected best-version prompts, the same text the Worker sends.
+// MODEL_SYSTEM_PROMPTS varies per model. USER_PROMPT_SCAFFOLD is shared by all
+// models and wraps your pasted passage.
+// ---------------------------------------------------------------------------
+const MODEL_BEST_VERSION = {"gpt-5.2": "v1", "claude-haiku-4.5": "v3", "gemini-2.5-flash": "v3", "perplexity-sonar": "v2"};
+const MODEL_SYSTEM_PROMPTS = {"gpt-5.2": "You are evaluating the writing quality of an encyclopedic passage (a paragraph\nfrom Wikipedia).\n\nRead the passage, then rate it on each rubric dimension and give an overall\nscore. Return your scores as JSON.\n", "claude-haiku-4.5": "You are evaluating the writing quality of an encyclopedic passage (a paragraph\nfrom Wikipedia).\n\nRead the passage, then rate it on each rubric dimension and give an overall\nscore. Return your scores as JSON.\n\nAdditional calibration guidance learned from reviewer disagreement:\n- You have been scoring too generously. Be more critical and reserve scores of 8 or higher for genuinely excellent passages.\n- Judge substance before style. First decide whether the passage is accurate, neutral, and informative, and let that dominate the overall score. Treat surface polish as secondary.\n\nReturn only the requested JSON object.", "gemini-2.5-flash": "You are evaluating the writing quality of an encyclopedic passage (a paragraph\nfrom Wikipedia).\n\nRead the passage, then rate it on each rubric dimension and give an overall\nscore. Return your scores as JSON.\n\nAdditional calibration guidance learned from reviewer disagreement:\n- Do not penalize a thorough passage for its length when the extra detail is relevant and genuinely informative to the reader.\n- You have been scoring too generously. Be more critical and reserve scores of 8 or higher for genuinely excellent passages.\n\nReturn only the requested JSON object.", "perplexity-sonar": "You are evaluating the writing quality of an encyclopedic passage (a paragraph\nfrom Wikipedia).\n\nRead the passage, then rate it on each rubric dimension and give an overall\nscore. Return your scores as JSON.\n\nAdditional calibration guidance learned from reviewer disagreement:\n- Do not penalize a thorough passage for its length when the extra detail is relevant and genuinely informative to the reader.\n\nReturn only the requested JSON object."};
+const USER_PROMPT_SCAFFOLD = "PASSAGE TO EVALUATE:\n<your passage is inserted here>\n\nScore these dimensions of the passage plus an overall score:\n  - clarity: Is the passage clear and easy to understand on a first read?\n  - neutrality: Is the tone neutral and impartial, free of bias, promotion, or editorializing?\n  - verifiability: Do the claims appear sourced or attributable rather than unsupported assertions?\n  - coverage: Does the passage cover its topic adequately for its scope, without obvious gaps?\n  - structure: Is it well organized and coherent, with ideas that flow logically?\n  - readability: Is the language fluent, grammatical, and in an appropriate encyclopedic register?\n  - informativeness: Does it convey substantive, useful information efficiently rather than padding or triviality?\n  - overall: your holistic judgment of the passage's writing quality, decided directly and NOT as the average of the dimensions above.\n\nEvery score is an integer from 1 to 10 on this scale:\n  1 = unusable: incoherent, empty, or clearly not encyclopedic writing.\n  4 = poor to fair: readable but with real problems in clarity, neutrality, sourcing, or coverage.\n  7 = good: clear, neutral, and informative encyclopedic writing with only minor shortcomings.\n  10 = exceptional: clear, neutral, well sourced, comprehensive, and polished.\nPer-dimension meaning of the endpoints:\n  - clarity: 1 = confusing or impenetrable, 10 = immediately clear and easy to follow.\n  - neutrality: 1 = heavily biased or promotional, 10 = strictly neutral and impartial.\n  - verifiability: 1 = unsupported or unverifiable claims, 10 = claims clearly attributable to sources or concrete evidence.\n  - coverage: 1 = superficial or fragmentary, 10 = thorough and well rounded for its scope.\n  - structure: 1 = disjointed or incoherent, 10 = tightly organized and coherent.\n  - readability: 1 = clumsy, ungrammatical, or awkward prose, 10 = fluent, polished, encyclopedic prose.\n  - informativeness: 1 = vacuous or trivial, 10 = dense with relevant, useful information.\n\nRespond with a single JSON object and nothing else. For every dimension and for overall, write a brief reason FIRST and then the integer score, in that order, as an object with keys \"reason\" then \"score\". Use this exact shape:\n{\n  \"clarity\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"neutrality\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"verifiability\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"coverage\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"structure\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"readability\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"informativeness\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  },\n  \"overall\": {\n    \"reason\": \"<short reason>\",\n    \"score\": \"<integer 1 to 10>\"\n  }\n}";
+
+// Baseline distributions of the 500 study passages, loaded from a static file
+// generated from outputs/judge_evaluations.csv. Null until it loads (or if the
+// file is not present, in which case the per-dimension charts are skipped).
+let BASELINE = null;
+
+let accessWidgetId = null;
+let evalWidgetId = null;
+
+function onloadTurnstile() {
+  if (!window.turnstile) return;
+  accessWidgetId = window.turnstile.render("#ts-access", { sitekey: TURNSTILE_SITE_KEY });
+  evalWidgetId = window.turnstile.render("#ts-eval", { sitekey: TURNSTILE_SITE_KEY });
+}
+// Turnstile calls window.onloadTurnstileCallback when render=explicit is set,
+// but with the async api.js we poll until it is ready.
+window.onloadTurnstileCallback = onloadTurnstile;
+(function waitForTurnstile() {
+  if (window.turnstile && accessWidgetId === null) { onloadTurnstile(); return; }
+  if (accessWidgetId === null) setTimeout(waitForTurnstile, 200);
+})();
+
+function setStatus(el, text, kind) {
+  el.textContent = text;
+  el.className = "status " + (kind || "info");
+}
+
+function tsToken(widgetId) {
+  try { return window.turnstile ? window.turnstile.getResponse(widgetId) : ""; }
+  catch (e) { return ""; }
+}
+function tsReset(widgetId) {
+  try { if (window.turnstile) window.turnstile.reset(widgetId); } catch (e) {}
+}
+
+// ---- Part A: request access ----
+document.getElementById("btn-access").addEventListener("click", async function () {
+  const btn = this;
+  const status = document.getElementById("status-access");
+  const email = document.getElementById("email").value.trim();
+  const token = tsToken(accessWidgetId);
+  if (!email) { setStatus(status, "Enter an email address.", "err"); return; }
+  if (!token) { setStatus(status, "Please complete the human check.", "err"); return; }
+  btn.disabled = true;
+  setStatus(status, "Sending.", "info");
+  try {
+    const resp = await fetch(WORKER_BASE_URL + "/request-access", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, turnstileToken: token }),
+    });
+    const data = await resp.json();
+    if (data.ok) setStatus(status, data.message || "If that email is valid, a token is on its way.", "ok");
+    else setStatus(status, data.message || "Could not process that request.", "err");
+  } catch (e) {
+    setStatus(status, "Network error. Please try again.", "err");
+  } finally {
+    tsReset(accessWidgetId);
+    btn.disabled = false;
+  }
+});
+
+// ---- Part B: evaluate ----
+document.getElementById("btn-eval").addEventListener("click", async function () {
+  const btn = this;
+  const status = document.getElementById("status-eval");
+  const result = document.getElementById("result");
+  result.style.display = "none";
+  result.innerHTML = "";
+  const content = document.getElementById("content").value;
+  const model = document.getElementById("model").value;
+  const accessToken = document.getElementById("token").value.trim();
+  const token = tsToken(evalWidgetId);
+  if (!content.trim()) { setStatus(status, "Paste some content to evaluate.", "err"); return; }
+  if (!accessToken) { setStatus(status, "Enter your access token.", "err"); return; }
+  if (!token) { setStatus(status, "Please complete the human check.", "err"); return; }
+  // Persist the token locally so it does not have to be re-entered next visit.
+  saveToken(accessToken);
+  btn.disabled = true;
+  setStatus(status, "Evaluating with " + model + ".", "info");
+  try {
+    const resp = await fetch(WORKER_BASE_URL + "/evaluate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: accessToken, turnstileToken: token, content: content, model: model }),
+    });
+    const data = await resp.json();
+    if (data.ok) {
+      setStatus(status, "", "info");
+      renderResult(result, data);
+    } else if (data.capped) {
+      setStatus(status, "", "info");
+      renderCapped(result, data);
+    } else {
+      setStatus(status, data.message || "Evaluation failed.", "err");
+    }
+  } catch (e) {
+    setStatus(status, "Network error. Please try again.", "err");
+  } finally {
+    tsReset(evalWidgetId);
+    btn.disabled = false;
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Access-token persistence. The token is saved to localStorage when you run an
+// evaluation, pre-filled on the next visit, and can be cleared with the
+// "forget token" control. Self-contained, no other storage is used.
+// ---------------------------------------------------------------------------
+const TOKEN_STORE_KEY = "eval_access_token";
+const tokenInput = document.getElementById("token");
+const forgetLink = document.getElementById("forget-token");
+
+function updateForgetVisibility() {
+  if (forgetLink) forgetLink.hidden = !tokenInput.value.trim();
+}
+function saveToken(t) {
+  try { localStorage.setItem(TOKEN_STORE_KEY, t); } catch (e) {}
+  updateForgetVisibility();
+}
+function forgetToken() {
+  try { localStorage.removeItem(TOKEN_STORE_KEY); } catch (e) {}
+  tokenInput.value = "";
+  updateForgetVisibility();
+}
+(function prefillToken() {
+  try {
+    const saved = localStorage.getItem(TOKEN_STORE_KEY);
+    if (saved && !tokenInput.value) tokenInput.value = saved;
+  } catch (e) {}
+  updateForgetVisibility();
+})();
+if (forgetLink) {
+  forgetLink.addEventListener("click", function (e) { e.preventDefault(); forgetToken(); });
+}
+tokenInput.addEventListener("input", updateForgetVisibility);
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+function renderResult(el, data) {
+  const good = data.decision === "good";
+  let rows = "";
+  (data.dimensions || []).forEach(function (d) {
+    rows += "<tr><td class='dim'>" + esc(d.name) + "</td><td class='sc'>" +
+      esc(d.score) + "</td><td class='rs'>" + esc(d.reason) + "</td></tr>";
+  });
+  const u = data.usage || {};
+  el.innerHTML =
+    "<span class='badge " + (good ? "good" : "bad") + "'>" + (good ? "GOOD" : "BAD") + "</span>" +
+    "<div class='scores'>" +
+      "<div class='scorebox'><div class='n'>" + esc(data.overall) + "</div><div class='k'>Overall (direct)</div></div>" +
+      "<div class='scorebox'><div class='n'>" + esc(data.composite) + "</div><div class='k'>Composite</div></div>" +
+      "<div class='scorebox'><div class='n'>" + esc(data.good_threshold) + "</div><div class='k'>Threshold</div></div>" +
+    "</div>" +
+    (data.overall_reason ? "<div class='reasoning'>" + esc(data.overall_reason) + "</div>" : "") +
+    "<table><thead><tr><th>Dimension</th><th>Score</th><th>Reason</th></tr></thead><tbody>" +
+      rows + "</tbody></table>" +
+    "<p class='meta'>Model: " + esc(data.model) +
+      (data.repaired ? " . JSON repaired" : "") +
+      " . tokens in/out: " + esc(u.input_tokens) + "/" + esc(u.output_tokens) +
+      " (" + esc(u.token_source) + ")" +
+      " . est. cost: $" + esc(u.call_cost_usd) + "</p>" +
+    "<div class='charts' id='charts'></div>";
+  el.style.display = "block";
+  drawBaselineCharts(data);
+}
+
+function renderCapped(el, data) {
+  const url = data.support_url || "#";
+  el.innerHTML =
+    "<div class='capped'>" +
+      "<p>" + esc(data.message) + "</p>" +
+      "<a class='support' href='" + esc(url) + "' target='_blank' rel='noopener'>Support the project</a>" +
+    "</div>";
+  el.style.display = "block";
+}
+
+// ---------------------------------------------------------------------------
+// Prompt viewer. Shows the exact system prompt for the selected model and the
+// shared user-message scaffold, updating whenever the model dropdown changes.
+// ---------------------------------------------------------------------------
+function updatePromptView() {
+  const model = document.getElementById("model").value;
+  const sys = MODEL_SYSTEM_PROMPTS[model] || "";
+  const ver = MODEL_BEST_VERSION[model] || "";
+  document.getElementById("prompt-meta").textContent =
+    "Model " + model + ", study best prompt version " + ver + ", temperature 0. " +
+    "The system prompt below is sent verbatim, then the user message scaffold with your passage.";
+  document.getElementById("prompt-system").textContent = sys;
+  document.getElementById("prompt-user").textContent = USER_PROMPT_SCAFFOLD;
+}
+
+document.getElementById("prompt-toggle").addEventListener("click", function () {
+  const body = document.getElementById("prompt-body");
+  const open = body.classList.toggle("open");
+  this.classList.toggle("open", open);
+  this.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.getElementById("model").addEventListener("change", updatePromptView);
+updatePromptView();
+
+// ---------------------------------------------------------------------------
+// Baseline percentile charts. For each rubric dimension (plus overall and the
+// composite) draw a small distribution of the baseline passages' scores for the
+// SELECTED model, with a vertical line at this passage's score and its percentile.
+// ---------------------------------------------------------------------------
+function loadBaseline() {
+  return fetch("baseline_distributions.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) { BASELINE = d; })
+    .catch(function () { BASELINE = null; });
+}
+
+function ordinal(n) {
+  const s = ["th", "st", "nd", "rd"], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+function fmtPct(p) {
+  const pc = Math.round(p * 100);
+  return ordinal(pc) + " percentile (" + pc + "% of baseline at or below)";
+}
+
+function svgFrame(bars, mx, plotT, plotH) {
+  const W = 210, H = 92, padR = 4, padL = 4;
+  const line = "<line x1='" + mx.toFixed(1) + "' y1='" + plotT + "' x2='" + mx.toFixed(1) +
+    "' y2='" + (plotT + plotH) + "' stroke='#f08c00' stroke-width='2'/>";
+  const ax = "<text x='" + padL + "' y='" + (H - 3) + "' fill='#9aa3b2' font-size='9'>1</text>" +
+    "<text x='" + (W - padR - 10) + "' y='" + (H - 3) + "' fill='#9aa3b2' font-size='9'>10</text>";
+  return "<svg viewBox='0 0 " + W + " " + H + "' width='100%' height='92' role='img'>" +
+    bars + line + ax + "</svg>";
+}
+
+// Integer-score dimensions: histogram over integer bins 1..10 from counts.
+function svgHistCounts(dist, mark) {
+  const counts = dist.counts, n = dist.n || 1;
+  const W = 210, H = 92, padT = 6, padB = 16, padL = 4, padR = 4;
+  const plotW = W - padL - padR, plotH = H - padT - padB, bw = plotW / 10;
+  let maxc = 0;
+  for (let i = 1; i <= 10; i++) { const c = counts[String(i)] || 0; if (c > maxc) maxc = c; }
+  maxc = maxc || 1;
+  let bars = "";
+  for (let i = 1; i <= 10; i++) {
+    const c = counts[String(i)] || 0, h = plotH * c / maxc;
+    const x = padL + (i - 1) * bw, y = padT + plotH - h;
+    bars += "<rect x='" + (x + 1).toFixed(1) + "' y='" + y.toFixed(1) + "' width='" +
+      (bw - 2).toFixed(1) + "' height='" + h.toFixed(1) + "' fill='#3f5f9b'/>";
+  }
+  const m = Math.max(1, Math.min(10, Math.round(Number(mark))));
+  const mx = padL + (m - 0.5) * bw;
+  let cum = 0; for (let i = 1; i <= m; i++) cum += counts[String(i)] || 0;
+  return { svg: svgFrame(bars, mx, padT, plotH), pctLabel: fmtPct(cum / n) };
+}
+
+// Continuous composite: histogram over nb bins across [1,10] from values.
+function svgHistValues(dist, mark) {
+  const vals = dist.values || [], n = dist.n || vals.length || 1;
+  const W = 210, H = 92, padT = 6, padB = 16, padL = 4, padR = 4;
+  const lo = 1, hi = 10, nb = 18;
+  const plotW = W - padL - padR, plotH = H - padT - padB, bw = plotW / nb;
+  const bins = new Array(nb).fill(0);
+  vals.forEach(function (v) {
+    let b = Math.floor((v - lo) / (hi - lo) * nb);
+    if (b < 0) b = 0; if (b >= nb) b = nb - 1; bins[b]++;
+  });
+  let maxc = 0; for (let i = 0; i < nb; i++) if (bins[i] > maxc) maxc = bins[i];
+  maxc = maxc || 1;
+  let bars = "";
+  for (let i = 0; i < nb; i++) {
+    const h = plotH * bins[i] / maxc, x = padL + i * bw, y = padT + plotH - h;
+    bars += "<rect x='" + (x + 0.5).toFixed(1) + "' y='" + y.toFixed(1) + "' width='" +
+      (bw - 1).toFixed(1) + "' height='" + h.toFixed(1) + "' fill='#3f5f9b'/>";
+  }
+  const mm = Math.max(lo, Math.min(hi, Number(mark)));
+  const mx = padL + (mm - lo) / (hi - lo) * plotW;
+  let le = 0; vals.forEach(function (v) { if (v <= Number(mark)) le++; });
+  return { svg: svgFrame(bars, mx, padT, plotH), pctLabel: fmtPct(le / n) };
+}
+
+function drawBaselineCharts(data) {
+  const host = document.getElementById("charts");
+  if (!host) return;
+  if (!BASELINE || !BASELINE.models || !BASELINE.models[data.model]) {
+    host.innerHTML = "<p class='cp' style='color:var(--muted)'>Baseline distributions are not available for this model.</p>";
+    return;
+  }
+  const mb = BASELINE.models[data.model];
+  const n = (mb.overall && mb.overall.n) ? mb.overall.n : 500;
+  const items = (data.dimensions || []).map(function (d) { return { name: d.name, score: Number(d.score) }; });
+  items.push({ name: "overall", score: Number(data.overall) });
+  let html = "<h3>How this passage compares to the " + n + " baseline passages, judged by " +
+    esc(data.model) + "</h3><div class='chart-grid'>";
+  items.forEach(function (it) {
+    const dist = mb[it.name];
+    if (!dist) return;
+    const r = svgHistCounts(dist, it.score);
+    html += "<div class='chart'><div class='ct'>" + esc(it.name) + "</div>" +
+      "<div class='cp'>score <b>" + esc(it.score) + "</b>, " + r.pctLabel + "</div>" + r.svg + "</div>";
+  });
+  if (mb.composite && typeof data.composite === "number") {
+    const r = svgHistValues(mb.composite, Number(data.composite));
+    html += "<div class='chart'><div class='ct'>composite</div>" +
+      "<div class='cp'>score <b>" + esc(data.composite) + "</b>, " + r.pctLabel + "</div>" + r.svg + "</div>";
+  }
+  html += "</div>";
+  host.innerHTML = html;
+}
+
+// ---------------------------------------------------------------------------
+// Mock result. Renders the results section without any Worker call so the
+// prompt view and baseline charts can be validated locally. Trigger with
+// ?mock=1 in the URL or by calling window.__injectMockResult() in the console.
+// ---------------------------------------------------------------------------
+function injectMockResult() {
+  const model = document.getElementById("model").value;
+  const dimNames = ["clarity", "neutrality", "verifiability", "coverage", "structure", "readability", "informativeness"];
+  const dimensions = dimNames.map(function (d, i) {
+    return { name: d, score: 5 + ((i * 2 + 3) % 5), reason: "Mock reason for " + d + "." };
+  });
+  const overall = 7;
+  const W = { neutrality: 0.0495, verifiability: 0.277, coverage: 0.4139, readability: 0.3138 };
+  const smap = {}; dimensions.forEach(function (d) { smap[d.name] = d.score; });
+  let comp = -0.106; for (const k in W) comp += W[k] * smap[k];
+  comp = Math.max(1, Math.min(10, comp));
+  const data = {
+    ok: true, model: model, overall: overall, composite: Number(comp.toFixed(2)),
+    good_threshold: 6, decision: overall >= 6 ? "good" : "bad",
+    overall_reason: "Mock holistic assessment, shown for local rendering only.",
+    dimensions: dimensions, repaired: false,
+    usage: { input_tokens: 1200, output_tokens: 180, token_source: "mock", call_cost_usd: 0.0033 },
+  };
+  renderResult(document.getElementById("result"), data);
+  setStatus(document.getElementById("status-eval"),
+    "Showing a mock result for rendering. No judge call was made.", "info");
+}
+window.__injectMockResult = injectMockResult;
+
+loadBaseline().then(function () {
+  try {
+    if (new URLSearchParams(window.location.search).has("mock")) injectMockResult();
+  } catch (e) {}
+});
+</script>
+</body>
+</html>

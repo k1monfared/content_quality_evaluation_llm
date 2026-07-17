@@ -1,0 +1,8 @@
+dimension,fitted_weight_human_overall,univariate_corr_overall,inter_rater_reliability,max_collinearity,llm_match_drop_one_delta,kept
+clarity,0.148,0.6779,0.7536,0.8432,0.0037,False
+neutrality,0.0467,0.317,0.835,0.2814,0.0002,True
+verifiability,0.192,0.6688,0.7429,0.532,-0.0096,True
+coverage,0.1493,0.647,0.6963,0.792,-0.0016,True
+structure,0.1559,0.6824,0.7609,0.8154,-0.0008,False
+readability,0.0807,0.653,0.795,0.8432,-0.0077,True
+informativeness,0.2716,0.7276,0.7525,0.792,0.0006,False

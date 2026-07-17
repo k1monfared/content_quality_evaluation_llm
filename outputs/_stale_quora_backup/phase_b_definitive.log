@@ -1,0 +1,93 @@
+=== START 1783214057 ===
+=== PANEL ===
+Wrote 300 new persona ratings to outputs/human_panel.csv
+=== PROMPT_ENG ===
+claude-sonnet-4.5: best=v5 (tuning pearson=0.869)
+gemini-2.5-pro: best=v2 (tuning pearson=0.816)
+gpt-5.2: best=v1 (tuning pearson=0.854)
+perplexity-sonar-pro: best=v2 (tuning pearson=0.903)
+
+Per-version tuning results:
+               model version  iter  n  pearson  spearman  level_bias  spread_ratio  length_resid_corr   mae correction_applied
+   claude-sonnet-4.5      v1     1 24    0.812     0.841       0.908         1.557             -0.135 1.221             (base)
+   claude-sonnet-4.5      v2     2 24    0.794     0.802       0.949         1.412             -0.198 1.215     over_dispersed
+   claude-sonnet-4.5      v3     3 24    0.860     0.870       0.366         1.230             -0.103 0.726       too_generous
+   claude-sonnet-4.5      v4     4 24    0.805     0.831       0.283         1.287             -0.204 0.789          substance
+   claude-sonnet-4.5      v5     5 24    0.869     0.864       0.366         1.366             -0.243 0.743       length_under
+      gemini-2.5-pro      v1     1 24    0.798     0.819       1.199         2.307             -0.029 2.067             (base)
+      gemini-2.5-pro      v2     2 24    0.816     0.831       1.033         2.205             -0.097 1.824     over_dispersed
+      gemini-2.5-pro      v3     3 24    0.779     0.799       0.783         1.897             -0.057 1.489       too_generous
+      gemini-2.5-pro      v4     4 24    0.772     0.767       0.741         1.902             -0.097 1.493          substance
+             gpt-5.2      v1     1 24    0.854     0.798       0.449         1.271              0.036 0.792             (base)
+             gpt-5.2      v2     2 24    0.848     0.810       0.199         1.319              0.026 0.676          substance
+perplexity-sonar-pro      v1     1 24    0.829     0.769       1.158         1.296              0.289 1.237             (base)
+perplexity-sonar-pro      v2     2 24    0.903     0.850       0.866         1.089             -0.044 0.893        length_over
+perplexity-sonar-pro      v3     3 24    0.781     0.766       0.616         1.134              0.471 0.783       too_generous
+perplexity-sonar-pro      v4     4 24    0.841     0.812       0.866         1.261              0.237 0.953          substance
+
+Best versions: {'claude-sonnet-4.5': 'v5', 'gemini-2.5-pro': 'v2', 'gpt-5.2': 'v1', 'perplexity-sonar-pro': 'v2'}
+Wrote /home/k1/public/JQ/content_quality_evaluation_llm/outputs/prompt_eng_results.csv and /home/k1/public/JQ/content_quality_evaluation_llm/outputs/best_prompt_versions.json
+=== JUDGES ===
+claude-sonnet-4.5 @ v5: 126 new evaluations
+gemini-2.5-pro @ v2: 126 new evaluations
+gpt-5.2 @ v1: 126 new evaluations
+perplexity-sonar-pro @ v2: 126 new evaluations
+Total new judge evaluations: 504 (store: outputs/judge_evaluations.csv)
+=== ANALYZE ===
+Human-human ceiling: pearson=0.898 icc=0.946 (n=150 items)
+
+Headline (LLM-human / human-human correlation ratio):
+               model version  n_items  judge_human_corr  human_human_corr  ratio  ratio_boot_mean  ratio_ci_low  ratio_ci_high
+perplexity-sonar-pro      v2      150             0.868             0.898  0.967            0.967         0.927          1.013
+             gpt-5.2      v1      150             0.860             0.898  0.958            0.959         0.910          1.007
+   claude-sonnet-4.5      v5      150             0.816             0.898  0.908            0.909         0.841          0.971
+      gemini-2.5-pro      v2      150             0.727             0.898  0.809            0.812         0.723          0.889
+
+Secondary (precision/recall/F1 vs thresholded random human):
+               model  precision  recall    f1  positives_true  positives_pred
+   claude-sonnet-4.5      0.375   0.857 0.522              14              32
+      gemini-2.5-pro      0.260   0.929 0.406              14              50
+             gpt-5.2      0.286   0.857 0.429              14              42
+perplexity-sonar-pro      0.318   1.000 0.483              14              44
+
+Cost accounting (actuals from bookkeeping store):
+{
+  "total_calls": 1206,
+  "total_input_tokens": 1121921,
+  "total_output_tokens": 901369,
+  "total_cost_usd": 11.8933535,
+  "cost_per_judge_eval": 0.02359792361111111,
+  "api_usage_share": 1.0
+}
+               model  calls  input_tokens  output_tokens  cost_usd  mean_latency_s
+    claude-haiku-4.5     42         34481          20264  0.095273        3.744405
+   claude-sonnet-4.5    246        265500         114234  2.510010        9.562431
+      gemini-2.5-pro    222        208931         369307  3.954234       16.232486
+             gpt-5.2    174        143937          63019  0.810111        5.669224
+        gpt-5.4-mini    300        272130          88716  0.245465        2.475147
+perplexity-sonar-pro    222        196942         245829  4.278261        5.557396
+
+Parse success and failure:
+{
+  "attempts": 864,
+  "ok": 864,
+  "failures": 0,
+  "failure_rate": 0.0,
+  "parse_success_rate": 1.0,
+  "repaired_recoveries": 42
+}
+               model  attempts  ok  repaired  failures  failure_rate
+   claude-sonnet-4.5       246 246         0         0           0.0
+      gemini-2.5-pro       222 222        34         0           0.0
+             gpt-5.2       174 174         0         0           0.0
+perplexity-sonar-pro       222 222         8         0           0.0
+
+Best judge by correlation ratio: perplexity-sonar-pro (ratio=0.967, 95% CI [0.927, 1.013])
+=== FIGURES ===
+/home/k1/public/JQ/content_quality_evaluation_llm/scripts/generate_figures.py:62: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(df["model"], rotation=20, ha="right")
+Wrote /home/k1/public/JQ/content_quality_evaluation_llm/docs/images/headline_ratio.png
+Wrote /home/k1/public/JQ/content_quality_evaluation_llm/docs/images/cost_per_model.png
+Wrote /home/k1/public/JQ/content_quality_evaluation_llm/docs/images/prompt_versions.png
+Wrote /home/k1/public/JQ/content_quality_evaluation_llm/docs/images/calibration.png
+=== DONE 1783215078 ===

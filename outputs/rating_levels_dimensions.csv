@@ -1,0 +1,8 @@
+dimension,two_human_average,gpt-5.2,claude-haiku-4.5,gemini-2.5-flash,perplexity-sonar
+clarity,6.556,6.976,7.1,8.0,7.506
+neutrality,8.232,8.112,7.442,9.296,9.078
+verifiability,5.032,4.986,4.994,7.518,6.658
+coverage,4.874,5.778,5.222,7.652,6.856
+structure,6.739,6.91,6.864,8.404,7.462
+readability,6.488,6.952,7.09,8.13,7.454
+informativeness,5.997,7.142,5.818,8.404,7.392

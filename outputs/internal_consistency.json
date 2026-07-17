@@ -1,0 +1,62 @@
+{
+  "dims": [
+    "clarity",
+    "neutrality",
+    "verifiability",
+    "coverage",
+    "structure",
+    "readability",
+    "informativeness"
+  ],
+  "raters": [
+    {
+      "rater": "human_1",
+      "kind": "human",
+      "flat_corr": 0.8484,
+      "fitted_corr": 0.8741,
+      "better": "fitted"
+    },
+    {
+      "rater": "human_2",
+      "kind": "human",
+      "flat_corr": 0.8777,
+      "fitted_corr": 0.9008,
+      "better": "fitted"
+    },
+    {
+      "rater": "random_human",
+      "kind": "human_ref",
+      "flat_corr": 0.9042,
+      "fitted_corr": 0.928,
+      "better": "fitted"
+    },
+    {
+      "rater": "gpt-5.2",
+      "kind": "judge",
+      "flat_corr": 0.9477,
+      "fitted_corr": 0.9524,
+      "better": "fitted"
+    },
+    {
+      "rater": "claude-haiku-4.5",
+      "kind": "judge",
+      "flat_corr": 0.8826,
+      "fitted_corr": 0.9297,
+      "better": "fitted"
+    },
+    {
+      "rater": "gemini-2.5-flash",
+      "kind": "judge",
+      "flat_corr": 0.9267,
+      "fitted_corr": 0.9354,
+      "better": "fitted"
+    },
+    {
+      "rater": "perplexity-sonar",
+      "kind": "judge",
+      "flat_corr": 0.9652,
+      "fitted_corr": 0.9694,
+      "better": "fitted"
+    }
+  ]
+}

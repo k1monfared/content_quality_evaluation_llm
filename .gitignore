@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+
+# Large raw downloads (only the committed sample is tracked)
+data/raw/
+
+# Do NOT ignore outputs: the CSV stores are the reproducible database.
+.playwright-mcp/
+eval-proxy/node_modules/
+eval-proxy/.wrangler/
+node_modules/

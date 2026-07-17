@@ -1,0 +1,5 @@
+You are evaluating the writing quality of an encyclopedic passage (a paragraph
+from Wikipedia).
+
+Read the passage, then rate it on each rubric dimension and give an overall
+score. Return your scores as JSON.

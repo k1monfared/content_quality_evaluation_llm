@@ -1,0 +1,5 @@
+model,precision,recall,f1,positives_true,positives_pred
+gpt-5.2,0.485,0.99,0.651,210,429
+claude-haiku-4.5,0.635,0.829,0.719,210,274
+gemini-2.5-flash,0.442,0.995,0.612,210,473
+perplexity-sonar,0.491,0.952,0.648,210,407

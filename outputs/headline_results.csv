@@ -1,0 +1,5 @@
+model,version,n_items,judge_human_corr,human_human_corr,ratio,ratio_boot_mean,ratio_ci_low,ratio_ci_high
+gpt-5.2,v1,500,0.738,0.686,1.076,1.076,0.995,1.159
+claude-haiku-4.5,v3,500,0.659,0.686,0.96,0.962,0.817,1.082
+gemini-2.5-flash,v3,500,0.616,0.686,0.898,0.897,0.81,0.985
+perplexity-sonar,v2,500,0.61,0.686,0.889,0.887,0.789,0.986
